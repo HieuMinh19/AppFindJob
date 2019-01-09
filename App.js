@@ -23,7 +23,7 @@ const App = createStackNavigator({
   
   PartTime:{screen:PartTime},
 }, {
-  initialRouteName: 'Home'
+  initialRouteName: 'Login'
 });
 _toggleExpanded = () => {
     this.setState({ collapsed: !this.state.collapsed });
