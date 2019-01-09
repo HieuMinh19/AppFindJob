@@ -6,7 +6,7 @@ var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
 var URL =  "http://192.168.0.106/servershowcongviec.php"
 
-export default class TrangChu extends React.Component {
+export default class showCongViec extends React.Component {
  
     constructor(props){
         super(props);
