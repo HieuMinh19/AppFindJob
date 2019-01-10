@@ -10,6 +10,7 @@ import styles from '../css/Styless';
 import global from '../api/global';
 import checkLogin from '../api/checkLogin';
 import getToken from '../api/getToken';
+import saveToken from '../api/saveToken';
 export default class TrangChu extends React.Component {
   constructor(props){
     super(props);
@@ -39,7 +40,7 @@ export default class TrangChu extends React.Component {
 
 
   clickTimKiem(){    
-     fetch("http://192.168.3.29/servershowcongviec.php",{
+     fetch("http://10.0.129.175/servershowcongviec.php",{
          method: 'POST',
          headers: {
            'Accept': 'application/json',
@@ -75,6 +76,10 @@ export default class TrangChu extends React.Component {
         Alert.alert('fail'));
    }
 
+  DangXuat = ()=>{
+    this.setState({user:null});
+    saveToken('');
+  }
   DangNhap=()=>{
     
     this.props.navigation.navigate('Login')  
@@ -100,9 +105,10 @@ export default class TrangChu extends React.Component {
 
  render() {
     const loginStatus = (
-      <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangNhap}>
+      <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} 
+        onPress={this.DangXuat.bind(this)}>
           <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng xuất</Text>
-        </TouchableHighlight>
+      </TouchableHighlight>
     )       
      
     const logoutStatus = (
