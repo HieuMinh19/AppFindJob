@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-//le minh hieu
-=======
 
+//le minh hieu
 // nguyen phuc duc
->>>>>>> 517c7801bea7ec54110b64c9be17f1f184934b36
+
 import React from 'react';
 import { Text, View, Image, StatusBar, 
          TouchableOpacity, TouchableHighlight,
