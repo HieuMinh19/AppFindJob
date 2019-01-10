@@ -4,6 +4,9 @@ import { Text, View, StatusBar, Image,
          TextInput, Alert } from 'react-native';
 import styles from '../css/Styless';
 import global from '../api/global';
+import getToken from '../api/getToken';
+import checkLogin from '../api/checkLogin';
+
 export default class DangKi extends React.Component{
     constructor(props){
       super(props);
@@ -12,10 +15,9 @@ export default class DangKi extends React.Component{
         txtMatKhau: "",
         txtRetypeMatKhau: "",
         errMessage:"",
-        uname:'null',
       }
+     
     }
-
     clickRegister(){
       fetch("http://192.168.0.139/serverRegister.php",{
           method: 'POST',
@@ -64,15 +66,14 @@ export default class DangKi extends React.Component{
     };
 
     render() {
-      console.log(global.onSignIn);
-      //global.onSignIn ? this.setState({uname:global.onSignIn}): this.setState({uname:'null'})
+       
+      
         return (
           <View style={styles.container}>
             <StatusBar hidden/>
 
             <Image style={styles.logo} source={require('../assets/logo.png')}/>
             <Text style={{fontSize: 20, fontWeight: '500'}}>Tạo một tài khoản (miễn phí)</Text>
-            <Text style={{paddingLeft: 20}}>{this.state.uname}</Text>
             <Text style={{paddingLeft: 20}}>Username</Text>
             <TextInput style={styles.txtInput2}  
                 onChangeText={(txtTaiKhoan) => this.setState({txtTaiKhoan})}

@@ -1,9 +1,12 @@
+//le minh hieu
 import React from 'react';
 import { Text, View, Image, StatusBar, 
          TouchableOpacity, TouchableHighlight,
          TextInput, Alert} from 'react-native';
 import styles from '../css/Styless';
 import global from '../api/global';
+import checkLogin from '../api/checkLogin';
+import getToken from '../api/getToken';
 export default class TrangChu extends React.Component {
   constructor(props){
     super(props);
@@ -19,6 +22,14 @@ export default class TrangChu extends React.Component {
     }
     global.onSignIn = this.onSignin.bind(this);
   }
+  componentDidMount(){
+    getToken()
+    .then(token => checkLogin(token))
+        .then(res => global.onSignIn(res.user))
+        .catch(err => console.log('LOI CHECK LOGIN', err));
+  }
+
+
   onSignin(user){
     this.setState({user});
   }
