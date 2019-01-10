@@ -4,7 +4,7 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Al
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.0.139/servershowcongviec.php"
+var URL =  "http://192.168.3.29/servershowcongviec.php"
 
 export default class showCongViec extends React.Component {
  
@@ -23,42 +23,7 @@ export default class showCongViec extends React.Component {
         this.setState({user});
       }
       ChiTietCViec=(a)=>{
-        //Alert.alert(a)
-       //this.props.navigation.navigate('ChiTietCViec', {thamso: a})  
-       fetch("http://192.168.0.139/servershowchitietcongviec.php",{
-         method: 'POST',
-         headers: {
-           'Accept': 'application/json',
-           'Content-Type': 'application/json',
-     },
-     body: JSON.stringify({
-         
-         "txtDiaDiem": this.state.txtDiaDiem,
-         "txtTimKiem": this.state.txtRetypeMatKhau,
-         })
-        
-      })
-     .then(  (response) => response.json())
-     .then(  (responseJson) => {       
-       this.setState({errMessage:responseJson.kq}) 
-        //Alert.alert('them thanh cong')
-         //setTimeout(() => Alert.alert('tạo tài khoản không thành công'), 2);
-         //Alert.alert('login ok bên Js')
-         
-        //  if(this.state.errMessage == "1"){
-       
-           this.props.navigation.navigate('ChiTietCViec')
-        //  }   else{
-       //Alert.alert('Thanh Cong')
-        //  } 
-        // if(this.state.errMessage == "1"){
-        //   Alert.alert('Đăng Kí Thành Công')
-        // }   else{
-        //   Alert.alert('Đăng Kí Thất Bại')
-        // }         
-     } )
-     .catch((error)=>  
-        Alert.alert(error));
+        this.props.navigation.navigate('Register')  
       }
 
       
@@ -85,12 +50,14 @@ export default class showCongViec extends React.Component {
     taohang(property){
         return(
           <View style ={styles.hang}>     
-           <TouchableOpacity style={styles.ChiTietCV} onPress={this.ChiTietCViec.bind(this,property.MaCViec)} >
-                <Text style={styles.test}>{property.MaCViec}</Text>  
+           <TouchableOpacity style={styles.ChiTietCV} onPress={this.ChiTietCViec.bind(this)} >
+                <Text style={styles.test}>{property.TenCTy}</Text>  
                 <Text style={styles.test}>{property.TenCViec}</Text>  
                 <Text style={styles.test}>{property.LuongCViec}</Text>  
                 <Text style={styles.test}>{property.TenTinh}</Text>    
-               
+                <Text style={styles.test}>{property.YeuCauCViec}</Text>   
+                <Text style={styles.test}>{property.TrinhDoCViec}</Text>   
+                <Text style={styles.test}>{property.KinhNghiemCViec}</Text>   
             </TouchableOpacity>   
           </View>
         );
@@ -111,20 +78,52 @@ export default class showCongViec extends React.Component {
     const username = this.state.user ? showUsername : hideUsername;
         return(
             <ScrollView>
+{/* onPress={ this.findPartTime.bind(this)} */}
+                <View style={styles.LuaChon}>
+                         <TouchableOpacity style={styles.btnLuaChon} >
+                            <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>PartTime</Text>
+                         </TouchableOpacity>
+                         <TouchableOpacity style={styles.btnLuaChon} >
+                            <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Full Time</Text>
+                         </TouchableOpacity>
+                </View>
+
                 <View style={styles.container}>  
                 {username}                            
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}
                     />                      
                 </View>          
-                
-                <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
+                {/* <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text> */}
             </ScrollView>   
         );
     }
 }
 
 var styles = StyleSheet.create({
+
+  LuaChon:{  
+    height:40,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems:'center',
+   //marginTop: 100,
+    marginLeft: 25
+  },
+  btnLuaChon:{
+    marginTop: 20,
+    marginLeft: 10,
+    backgroundColor: '#2E2EFE',
+    borderRadius: 40,
+    alignItems: 'center',
+    padding: 8,
+    marginRight:3,
+    width:100,
+    justifyContent: 'space-between',
+    // flexDirection: 'now',
+    width: '40%',
+},
+
     container: {
       flex:1
     }, 

@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 //le minh hieu
+=======
+
+// nguyen phuc duc
+>>>>>>> 517c7801bea7ec54110b64c9be17f1f184934b36
 import React from 'react';
 import { Text, View, Image, StatusBar, 
          TouchableOpacity, TouchableHighlight,
@@ -36,15 +41,15 @@ export default class TrangChu extends React.Component {
 
 
   clickTimKiem(){    
-     fetch("http://192.168.0.139/servershowcongviec.php",{
+     fetch("http://192.168.3.29/servershowcongviec.php",{
          method: 'POST',
          headers: {
            'Accept': 'application/json',
            'Content-Type': 'application/json',
      },
      body: JSON.stringify({
-         "txtTimKiem": this.state.txtTimKiem,
-         "txtDiaDiem": this.state.txtDiaDiem,
+         "tencongviec": this.state.txtTimKiem,
+         "tentinh": this.state.txtDiaDiem,
        //  "txtRetypeMatKhau": this.state.txtRetypeMatKhau,
          })
         

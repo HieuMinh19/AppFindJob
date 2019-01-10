@@ -7,116 +7,52 @@ mysqli_set_charset($db, "utf8");// de lay chu co dau
 $json = file_get_contents("php://input");
 $obj = json_decode($json, TRUE);
 //lay du lieu tu JS
-$tencongviec = $obj["txtTimKiem"];
-//$tencongviec = "";
-$diachi = $obj["txtDiaDiem"];
+$tencongviec = $obj["tencongviec"];
+//$tencongviec = "viet";
+$diachi = $obj["tentinh"];
   //$diachi = "nha";
 
 
-class showcongviec{
-    var $MaCViec;
+class showcongviec{  
+    var $TenCTy;
     var $TenCViec;
-    var $LuongCViec;
     var $TenTinh;
-    
-    function showcongviec($_MaCViec, $_TenCViec,$_LuongCViec, $_TenTinh){
-        $this->MaCViec = $_MaCViec;
-        $this->TenCViec = $_TenCViec;
-        $this->LuongCViec = $_LuongCViec;  
+    var $LuongCViec;
+    var $YeuCauCViec;
+    var $KinhNghiemCViec;
+    var $TrinhDoCViec;
+ 
+    function showcongviec($_TenCTy, $_TenCViec,$_TenTinh, $_LuongCViec,$_YeuCauCViec, $_KinhNghiemCViec,$_TrinhDoCViec){
+        
+        $this->TenCTy = $_TenCTy;
+        $this->TenCViec = $_TenCViec;  
         $this->TenTinh = $_TenTinh;
+        $this->LuongCViec = $_LuongCViec;
+        $this->YeuCauCViec = $_YeuCauCViec;  
+        $this->KinhNghiemCViec = $_KinhNghiemCViec;
+        $this->TrinhDoCViec = $_TrinhDoCViec;
+     
        
     }
 }
-//$raw_results = mysqli_query($db,"SELECT * FROM congviec,congty
-//WHERE (`TenCongViec` LIKE '%".$search."%') and congty.MaCongTy = congviec.MaCongTy ") ;      
-//
-//lay test theo ten cong ty
-//$quert = "SELECT * FROM congviec, tinh WHERE congviec.MaTinh = tinh.MaTinh";
-//$min_length = 3; //so ki tu nhap vao
-//if(strlen($tencongviec) >= $min_length){
 
-    
+        $result = mysqli_query($db,"SELECT TenCTy, TenCViec, TenTinh, LuongCViec, YeuCauCViec, KinhNghiemCViec, TrinhDoCViec 
+        FROM congty, congviec,tinh,chitietcongviec 
+        WHERE 
+            congviec.MaCViec = chitietcongviec.MaCViec 
+            and 
+            congviec.MaCTy = congty.MaCTy 
+            and 
+            congviec.MaTinh = tinh.MaTinh
+           ");
 
-    if(empty($tencongviec)){
-       
-        /*$quert = "SELECT * FROM congviec, tinh WHERE (congviec.MaTinh = tinh.MaTinh)";
-        $result = mysqli_query($db,$quert);
-        $arrshowcongviec = array();*/
-       
-
-       $result = mysqli_query($db,"SELECT * FROM congviec,tinh 
-        WHERE congviec.MaTinh = tinh.MaTinh ");
-        $arrshowcongviec = array();
-        if($result){
-            
-            while($row = mysqli_fetch_array($result)){
-                
-                array_push($arrshowcongviec, new showcongviec($row["MaCViec"], $row["TenCViec"],$row["LuongCViec"], $row["TenTinh"] ));
-            }
-            echo json_encode($arrshowcongviec);
-            // $errMess = "1";
-        }
-    }
- 
-    if(!empty($tencongviec)){
-      
-        $result = mysqli_query($db,"SELECT * FROM congviec,tinh 
-        WHERE (`TenCViec` LIKE '%".$tencongviec."%') and congviec.MaTinh = tinh.MaTinh");
         $arrshowcongviec = array();
       
             while($row = mysqli_fetch_array($result)){              
-                array_push($arrshowcongviec, new showcongviec( $row["MaCViec"],$row["TenCViec"],$row["LuongCViec"], $row["TenTinh"] ));
+                array_push($arrshowcongviec, new showcongviec( $row["TenCTy"],$row["TenCViec"],$row["TenTinh"], $row["LuongCViec"],$row["YeuCauCViec"],$row["KinhNghiemCViec"], $row["TrinhDoCViec"] ));
             }
             echo json_encode($arrshowcongviec); 
             // $errMess = "1";
         
-    }
-    /*else if(empty( $tencongviec) && !empty($diachi) ){
-        $quert = "SELECT * FROM congviec, tinh WHERE (TenTinh LIKE '%$diachi%')";
-        $result = mysqli_query($db,$quert);
-        $arrshowcongviec = array(); 
 
-        if($result){
-            while($row = mysqli_fetch_array($result)){
-            
-                array_push($arrshowcongviec, new showcongviec($row["TenCViec"],$row["LuongCViec"], $row["TenTinh"] ));
-            }
-            echo json_encode($arrshowcongviec);
-             // $errMess = "1";
-        }
-    }
-    else{
-        $quert = "SELECT * FROM congviec, tinh ";
-        $result = mysqli_query($db,$quert);
-        $arrshowcongviec = array();
-       
-        if($result){
-            while($row = mysqli_fetch_array($result)){
-            
-                array_push($arrshowcongviec, new showcongviec($row["TenCViec"],$row["LuongCViec"], $row["TenTinh"] ));
-            }
-             echo json_encode($arrshowcongviec);
-             $errMess = "1";
-        }
-    }*/
-
-
-
-    //(`TenTinh` LIKE '%".$diachi."%') and 
-     /*}else{
-         $errMess = "0";
-    }*/
-
-
-//test
-// $query = "INSERT INTO test ( taikhoan,  matkhau) 
-//       VALUES('$tencongviec', '$diachi') ";
-      
-//       if(mysqli_query($db, $query)){
-//         $errMess = "1";
-//       }else{
-//         $errMess = "0";
-//       }
-      
-//}
 ?>
