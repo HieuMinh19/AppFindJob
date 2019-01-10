@@ -4,14 +4,13 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity
 
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
+var URL =  "http://192.168.3.29/showchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
     constructor(props){
         super(props);
         this.state = {
-          
           dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2})
         }
       }
@@ -37,13 +36,12 @@ export default class TrangChu extends React.Component {
         return(
           <View style ={styles.hang}>     
            <TouchableOpacity style={styles.ChiTietCV} onPress={this.ChiTietCV} >
-                <Text style={styles.test}>{property.YeuCauCViec}</Text>  
-                <Text style={styles.test}>{property.KinhNghiemCViec}</Text>
-                <Text style={styles.test}>{property.TrinhDoCViec}</Text>     
-                {/* <Text>{property.DiaChi}</Text>  
+                <Text style={styles.test}>{property.MaCTY}</Text>  
+                <Text style={styles.test}>{property.TenCTY}</Text>     
+                <Text>{property.DiaChi}</Text>  
                 <Text>{property.Email}</Text>        
                 <Text>{property.DienThoai}</Text>   
-                <Text>{property.MaTinh}</Text>       */}
+                <Text>{property.MaTinh}</Text>      
             </TouchableOpacity>   
           </View>
         );
@@ -56,11 +54,7 @@ export default class TrangChu extends React.Component {
                             renderRow = {this.taohang}
                     />                      
                 </View>          
-                <View>
-                  {/* <Text>{this.props.navigation.state.params.thamso}</Text> */}
-                </View>  
             </ScrollView>   
-
         );
     }
 }
@@ -75,13 +69,9 @@ var styles = StyleSheet.create({
     hang:{
       flexDirection: 'column',
       flex: 1,
-      //justifyContent:'center',
-      //alignItems:'center',
-      marginLeft: 50,
-      marginTop:15,
-    },
-    ChiTietCV:{
-
+      justifyContent:'center',
+      alignItems:'center',
+      
     },
     hienthi:{
       flex:1,
