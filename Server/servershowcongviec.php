@@ -36,7 +36,6 @@ class showcongviec{
     }
 }
 
-      
         $result = mysqli_query($db,"SELECT TenCTy, TenCViec, TenTinh, LuongCViec, YeuCauCViec, KinhNghiemCViec, TrinhDoCViec 
         FROM congty, congviec,tinh,chitietcongviec 
         WHERE 
@@ -44,9 +43,8 @@ class showcongviec{
             and 
             congviec.MaCTy = congty.MaCTy 
             and 
-            congviec.MaTinh and tinh.MaTinh
+            congviec.MaTinh = tinh.MaTinh
            ");
-
 
         $arrshowcongviec = array();
       
