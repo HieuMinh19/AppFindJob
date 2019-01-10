@@ -25,7 +25,7 @@ export default class TrangChu extends React.Component {
 
 
   clickTimKiem(){    
-     fetch("http://192.168.0.106/servershowcongviec.php",{
+     fetch("http://192.168.0.139/servershowcongviec.php",{
          method: 'POST',
          headers: {
            'Accept': 'application/json',
@@ -99,22 +99,21 @@ export default class TrangChu extends React.Component {
     
       //tiến hành lấy user ra
       
-      const { user } = this.state;
+    const { user } = this.state;
     const showUsername = (
        
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.username: ''}</Text>
       
     )    
-    const showID = (
-      <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.MaUser: ''}</Text>
-    )
     const hideUsername = (
       //kiểm tra xem user có tồn tại hay không,
       // nếu có tiến hành gán giá trị
       //this.state.user.name => tiến hành lấy thuộc tính name trong array của user trả về
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}></Text>
     )    
-    
+    const showID = (
+      <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.MaUser: ''}</Text>
+    )
     const isLoguotJSX = this.state.user  ? loginStatus : logoutStatus;
     const username = this.state.user ? showUsername : hideUsername;
     return (

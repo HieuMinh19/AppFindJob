@@ -4,14 +4,15 @@ import { Text, View, StatusBar, Image,
          TextInput, Alert, AsyncStorage } from 'react-native';
 import styles from '../css/Styless';
 import global from '../api/global';
+import getToken from '../api/getToken';
 import saveToken from '../api/saveToken';
-import getToken from '../api/saveToken';
 export default class DangNhap extends React.Component{
     constructor(props){
       super(props);
       this.state = {
         TaiKhoan: "",
         txtMatKhau: "",
+            
       }
 
     }
@@ -20,28 +21,14 @@ export default class DangNhap extends React.Component{
     //Thường dùng để fetch dữ liệu từ server và sau đó setState để render dữ liệu ra.
     // Đến đây thì các phần tử đã được sinh ra rồi, và có thể tương tác với DOM bằng JS trong hàm này.
     componentDidMount(){
-      console.log("co vao DidMount")
-      _getToken = async () => {
-        try {
-            const value = await AsyncStorage.getItem('@token');
-            if (value !== null) {
-                //value có kiểu dữ liệu là 1 chuỗi
-               //nếu value có kiểu dữ liệu là 1 mảng thì phải trả về kiểu JSON.Parse(value)
-               console.log('TOKEN::' +value);
-                
-            }
-            console.log('TOKEN::');;
-        } catch (error) {
-        // Error retrieving data
-        console.log('TOKEN::');
-        }
-    }
-    
+      //AsyncStorage.getItem("@token")
+      getToken()
+      .then(a => console.log("TOKEN:::" + a))
     }
     clickLogin(){
       
       //api da thnh cong, khong quan tam den nua
-      fetch("http://192.168.0.106/serverlogin.php",{
+      fetch("http://192.168.0.139/serverlogin.php",{
       method: 'POST',
       headers: {
       Accept: 'application/json',
@@ -63,20 +50,14 @@ export default class DangNhap extends React.Component{
       //nên chỉ cần .then
       .then(response=>{
         //lệnh console.log để tiến hành debug
-        console.log(response.user)
-        //truyền vào tham số respose.user vì response trả về 1 user
-        global.onSignIn(response.user)       
-        this.props.navigation.navigate("Home")
         
-        _saveToken = async () => {
-          try {
-            await AsyncStorage.setItem("@token", user.token);
-          } catch (error) {
-            // Error saving data
-          }
-        }
-      
-        })
+        //truyền vào tham số respose.user vì response trả về 1 user
+        global.onSignIn(response.user);
+        this.props.navigation.navigate("Home");
+        //tiến hành save token bằng AsynStorage
+        //saveToken("@token", response.token);
+        AsyncStorage.setItem("@token", response.token);
+      })
       
       //catch truong hop login khong thanh cong, 
       //ham login se khhong the tra ve chuoi json => gây ra lỗi
@@ -85,7 +66,7 @@ export default class DangNhap extends React.Component{
         Alert.alert("Login không thành công");
         console.log(err)
       })
-      
+       
     }
 
     static navigationOptions = {
