@@ -36,7 +36,10 @@ class showcongviec{
     }
 }
 
+<<<<<<< HEAD
       
+=======
+>>>>>>> 65eceb802f9dab5c975efe6c8655e5c5e4bac914
         $result = mysqli_query($db,"SELECT TenCTy, TenCViec, TenTinh, LuongCViec, YeuCauCViec, KinhNghiemCViec, TrinhDoCViec 
         FROM congty, congviec,tinh,chitietcongviec 
         WHERE 
@@ -44,9 +47,14 @@ class showcongviec{
             and 
             congviec.MaCTy = congty.MaCTy 
             and 
+<<<<<<< HEAD
             congviec.MaTinh and tinh.MaTinh
            ");
 
+=======
+            congviec.MaTinh = tinh.MaTinh
+           ");
+>>>>>>> 65eceb802f9dab5c975efe6c8655e5c5e4bac914
 
         $arrshowcongviec = array();
       
