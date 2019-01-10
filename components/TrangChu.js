@@ -1,3 +1,5 @@
+
+// nguyen phuc duc
 import React from 'react';
 import { Text, View, Image, StatusBar, 
          TouchableOpacity, TouchableHighlight,
