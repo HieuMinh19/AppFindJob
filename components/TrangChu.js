@@ -25,15 +25,15 @@ export default class TrangChu extends React.Component {
 
 
   clickTimKiem(){    
-     fetch("http://192.168.0.139/servershowcongviec.php",{
+     fetch("http://192.168.3.29/servershowcongviec.php",{
          method: 'POST',
          headers: {
            'Accept': 'application/json',
            'Content-Type': 'application/json',
      },
      body: JSON.stringify({
-         "txtTimKiem": this.state.txtTimKiem,
-         "txtDiaDiem": this.state.txtDiaDiem,
+         "tencongviec": this.state.txtTimKiem,
+         "tentinh": this.state.txtDiaDiem,
        //  "txtRetypeMatKhau": this.state.txtRetypeMatKhau,
          })
         

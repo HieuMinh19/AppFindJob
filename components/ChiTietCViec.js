@@ -4,7 +4,7 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity
 
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.0.139/servershowchitietcongviec.php"
+var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
