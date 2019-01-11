@@ -16,6 +16,10 @@ export default class TrangChu extends React.Component {
         }
       }
 
+
+
+
+      
     fetchData(){
         fetch(URL, {method: "POST", body: null})
         .then((response) => response.json())
@@ -30,6 +34,7 @@ export default class TrangChu extends React.Component {
       }
 
     componentDidMount(){
+
         this.fetchData();
     }
 
@@ -50,7 +55,11 @@ export default class TrangChu extends React.Component {
       }
     render(){
         return(
+
+            
+
             <ScrollView>
+              <Text>{this.props.navigation.state.params.TenCTy}</Text>
                 <View style={styles.container}>                              
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}

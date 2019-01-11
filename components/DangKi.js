@@ -15,7 +15,10 @@ export default class DangKi extends React.Component{
         txtMatKhau: "",
         txtRetypeMatKhau: "",
         errMessage:"",
+
         uname:null
+
+      
       }
      
     }
@@ -23,8 +26,8 @@ export default class DangKi extends React.Component{
       getToken()
       .then(token => checkLogin(token))
           .then(res => {
-            
             this.setState({uname:res.user.username})
+            console.log(this.state.uname)
           })
           .catch(err => console.log('LOI CHECK LOGIN', err));
     }

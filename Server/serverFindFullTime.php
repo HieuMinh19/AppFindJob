@@ -45,7 +45,7 @@ class showcongviec{
             congviec.MaCTy = congty.MaCTy 
             and 
             congviec.MaTinh = tinh.MaTinh
-            and TinhChatCViec = 0
+            and TinhChatCViec = 1
 
            ");
 

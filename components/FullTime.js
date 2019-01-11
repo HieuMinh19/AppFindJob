@@ -1,114 +1,3 @@
-// import React from 'react';
-// import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
-// } from 'react-native';
-// import { StackNavigator } from 'react-navigation';
-
-// var arr = [];
-// var URL =  "http://192.168.3.29/serverFindPartTime.php";
-// var people = [
-//   {name: 'sdds', age: 29},
-//   {name: 'Sơn Tùng', age: 24},
-// ];
-
-// export default class TrangChu extends React.Component {
- 
-//   constructor(props){
-//       super(props);
-//       this.state = {
-
-//         dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2})
-//       }
-//       //this.ChiTietCV = this.ChiTietCV.bind(this);
-//       this.taohang = this.taohang.bind(this);
-//     }
-
-//     ChiTietCV=()=>{
-//       Alert.alert("sdfsdf")
-      
-//       this.props.navigation.navigate('Login')  
-//     }
-    
-//   fetchData(){
-//       fetch(URL, {method: "POST", body: null})
-//       .then((response) => response.json())
-//       .then((responseData) => {
-//         this.setState({
-//           dataSource: this.state.dataSource.cloneWithRows(responseData)
-//         });  
-//       })
-//       .catch((error) => {
-//           Alert.alert('lỗi lik',)
-//       });
-//     }
-    
-
-//   componentDidMount(){
-//       this.fetchData();
-//   }
- 
-//   taohang(property){
-  
-//       return(
-        
-//         <View style ={styles.hang}>     
-//          <TouchableOpacity style={styles.ChiTietCV} onPress={this.ChiTietCV} >
-//               <Text style={styles.test}>{property.MaChiTietCV}</Text>  
-//               <Text style={styles.test}>{property.MaLoaiCV}</Text>     
-//               <Text>{property.MaNganh}</Text>  
-//               <Text>{property.TenCV}</Text>        
-//               <Text>{property.SoLuong}</Text>   
-//               <Text>{property.YeuCau}</Text>      
-//           </TouchableOpacity>   
-//         </View>
-//       );   
-    
-        
-//     }
-//   render(){
-//       return(
-//           <ScrollView>
-//               <View style={styles.container}>                              
-//                   <ListView dataSource={this.state.dataSource}
-//                           renderRow = {this.taohang}
-//                   />                      
-//               </View>      
-
-//               <View style={styles.container}>                              
-//                 <TouchableOpacity style={styles.ChiTietCV} onPress={this.ChiTietCV}>         
-//                   <Text>dsadsa</Text>      
-//                 </TouchableOpacity>         
-//               </View>      
-             
-
-//           </ScrollView>   
-//       );
-//   }
-// }
-
-// var styles = StyleSheet.create({
-//   container: {
-//     flex:1
-//   }, 
-//   danhsach:{
-//     flex:1
-//   },
-//   hang:{
-//     flexDirection: 'column',
-//     flex: 1,
-//     justifyContent:'center',
-//     alignItems:'center',
-    
-//   },
-//   hienthi:{
-//     flex:1,
-    
-//   },
-//   test:{
-//     color:'red',
-    
-//   }
-// }) 
-
 
 import React from 'react';
 import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
@@ -116,7 +5,7 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Al
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.3.29/serverFindPartTime.php"
+var URL =  "http://192.168.3.29/serverFindFullTime.php"
 
 export default class showCongViec extends React.Component {
  
@@ -137,10 +26,10 @@ export default class showCongViec extends React.Component {
       ChiTietCViec=(a)=>{
         this.props.navigation.navigate('ChiTietCViec')  
       }
-      FullTime=(a)=>{
-        this.props.navigation.navigate('FullTime')  
+
+      PartTime=(a)=>{
+        this.props.navigation.navigate('PartTime')  
       }
-     
 
     fetchData(){
         fetch(URL, {method: "POST", body: null})
@@ -178,7 +67,7 @@ export default class showCongViec extends React.Component {
       }
 
       static navigationOptions = {
-        title: 'Những Công Việc Bán Thời Gian',
+        title: 'Những Công Việc Toàn Thời Gian',
         headerStyle:{
           backgroundColor: '#000'
         },
@@ -206,16 +95,16 @@ export default class showCongViec extends React.Component {
         return(
             <ScrollView>
                 <View style={styless.LuaChon}>
-                         <View style={styless._DisbtnLuaChon} >
+                         <TouchableOpacity style={styless.btnLuaChon} onPress={this.PartTime}>
                             <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>PartTime</Text>
-                         </View>
-                         <TouchableOpacity style={styless.btnLuaChon} onPress={this.FullTime}>
-                            <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>Full Time</Text>
                          </TouchableOpacity>
+                         <View style={styless._DisbtnLuaChon} >
+                            <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>FullTime</Text>
+                         </View>
                 </View>
 
                 <View>
-                    <Text style={styless.title}>Công Việc PartTime</Text>
+                    <Text style={styless.title}>Công Việc FullTime</Text>
                 </View>  
 
                 <View style={styless.container}>  
@@ -257,20 +146,20 @@ var styless = StyleSheet.create({
     // flexDirection: 'now',
     width: '40%',
 },
-
 _DisbtnLuaChon:{
-  marginTop: 20,
-  marginLeft: 10,
-  backgroundColor: '#ddd',
-  borderRadius: 40,
-  alignItems: 'center',
-  padding: 8,
-  marginRight:3,
-  width:100,
-  justifyContent: 'space-between',
-  // flexDirection: 'now',
-  width: '40%',
-},
+    marginTop: 20,
+    marginLeft: 10,
+    backgroundColor: '#ddd',
+    borderRadius: 40,
+    alignItems: 'center',
+    padding: 8,
+    marginRight:3,
+    width:100,
+    justifyContent: 'space-between',
+    // flexDirection: 'now',
+    width: '40%',
+  },
+  
     container: {
       flex:1
     }, 
