@@ -15,8 +15,18 @@ export default class DangKi extends React.Component{
         txtMatKhau: "",
         txtRetypeMatKhau: "",
         errMessage:"",
+        uname:null
       }
      
+    }
+    componentDidMount(){
+      getToken()
+      .then(token => checkLogin(token))
+          .then(res => {
+            
+            this.setState({uname:res.user.username})
+          })
+          .catch(err => console.log('LOI CHECK LOGIN', err));
     }
     clickRegister(){
       fetch("http://192.168.3.29/serverRegister.php",{
@@ -66,14 +76,13 @@ export default class DangKi extends React.Component{
     };
 
     render() {
-       
-      
         return (
           <View style={styles.container}>
             <StatusBar hidden/>
 
             <Image style={styles.logo} source={require('../assets/logo.png')}/>
             <Text style={{fontSize: 20, fontWeight: '500'}}>Tạo một tài khoản (miễn phí)</Text>
+            <Text style={{paddingLeft: 20}}>{this.state.uname}</Text>
             <Text style={{paddingLeft: 20}}>Username</Text>
             <TextInput style={styles.txtInput2}  
                 onChangeText={(txtTaiKhoan) => this.setState({txtTaiKhoan})}

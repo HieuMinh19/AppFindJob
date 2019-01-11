@@ -27,8 +27,12 @@ export default class TrangChu extends React.Component {
   }
   componentDidMount(){
     getToken()
-    .then(token => checkLogin(token))
-        .then(res => global.onSignIn(res.user))
+    .then(token => {checkLogin(token)
+        console.log(token)
+    })
+        .then(res => {
+          console.log(res),
+          global.onSignIn(res.user)})
         .catch(err => console.log('LOI CHECK LOGIN', err));
   }
 
