@@ -5,7 +5,11 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
 
-var URL =  "http://192.168.0.103/servershowchitietcongviec.php"
+import getMaCViec from '../api/getMaCViec';
+import getToken from '../api/getToken';
+import checkLogin from '../api/checkLogin';
+
+var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
@@ -13,30 +17,32 @@ export default class TrangChu extends React.Component {
         super(props);
         this.state = {
           
-          dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2})
+          dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2}),
+          mauser:null,
         }
-      }
-
-
-
-
-      
-    fetchData(){
-        fetch(URL, {method: "POST", body: null})
-        .then((response) => response.json())
-        .then((responseData) => {
-          this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(responseData)
-          });  
-        })
-        .catch((error) => {
-            Alert.alert('lỗi lik',)
-        });
       }
 
     componentDidMount(){
 
-        this.fetchData();
+      getToken()
+      .then(token => checkLogin(token))
+          .then(res => {
+            this.setState({mauser:res.user.MaUser})
+
+            console.log("ccccccccccccccccccccc",res.user.MaUser)
+          })
+          .catch(err => console.log('LOI CHECK LOGIN', err));
+
+
+
+        const macviec = this.props.navigation.state.params.MaCViec;
+        getMaCViec(macviec)
+        .then(responseData => {
+          this.setState({
+            dataSource: this.state.dataSource.cloneWithRows(responseData)
+          });  
+        })
+        .catch(err => console.log(err));
     }
 
     taohang(property){
@@ -46,10 +52,7 @@ export default class TrangChu extends React.Component {
                 <Text style={styles.test}>{property.YeuCauCViec}</Text>  
                 <Text style={styles.test}>{property.KinhNghiemCViec}</Text>
                 <Text style={styles.test}>{property.TrinhDoCViec}</Text>     
-                {/* <Text>{property.DiaChi}</Text>  
-                <Text>{property.Email}</Text>        
-                <Text>{property.DienThoai}</Text>   
-                <Text>{property.MaTinh}</Text>       */}
+             
             </TouchableOpacity>   
           </View>
         );
@@ -57,10 +60,13 @@ export default class TrangChu extends React.Component {
     render(){
         return(
 
-            
-
             <ScrollView>
-              <Text>{this.props.navigation.state.params.TenCTy}</Text>
+
+              {/* <Text>
+                {this.state.mauser}
+              </Text>   */}
+
+              <Text>{this.props.navigation.state.params.MaCViec}</Text>
                 <View style={styles.container}>                              
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}

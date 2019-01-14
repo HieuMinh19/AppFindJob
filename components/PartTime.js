@@ -4,7 +4,7 @@
 // import { StackNavigator } from 'react-navigation';
 
 
-var URL =  "http://192.168.0.103/serverFindPartTime.php";
+var URL =  "http://192.168.3.29/serverFindPartTime.php";
 
 // var arr = [];
 // var URL =  "http://192.168.3.29/serverFindPartTime.php";

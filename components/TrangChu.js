@@ -26,14 +26,17 @@ export default class TrangChu extends React.Component {
   }
   componentDidMount(){
     getToken()
-    .then(token => {checkLogin(token)
-        console.log(token)
-    })
+    // .then(token => {checkLogin(token)
+    //     //console.log(token)
+    // })
         .then(res => {
-          console.log(res),
-          global.onSignIn(res.user)})
+          console.log("ccc", res),
+          global.onSignIn(res)})
         .catch(err => console.log('LOI CHECK LOGIN', err));
   }
+
+ 
+
 
   onSignin(user){
     this.setState({user});
@@ -42,6 +45,7 @@ export default class TrangChu extends React.Component {
   clickTimKiem(TimKiem, DiaDiem){  
     AsyncStorage.setItem("@TimKiem", this.state.txtTimKiem);
     AsyncStorage.setItem("@DiaDiem", this.state.txtDiaDiem);
+    console.log('TINH',this.state.txtDiaDiem);
     this.props.navigation.navigate('showCongViec',{searchTenCV:TimKiem, Matinh:DiaDiem});  
    }
 
@@ -93,6 +97,7 @@ export default class TrangChu extends React.Component {
        
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.username: ''}</Text>
       
+      
     )    
     const hideUsername = (
       //kiểm tra xem user có tồn tại hay không,
@@ -103,13 +108,13 @@ export default class TrangChu extends React.Component {
     const showID = (
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.MaUser: ''}</Text>
     )
-    const isLoguotJSX = this.state.user  ? loginStatus : logoutStatus;
     const username = this.state.user ? showUsername : hideUsername;
+    const isLoguotJSX = this.state.user  ? loginStatus : logoutStatus;
+    
     return (
 
       <View style={styles.container}>
         <StatusBar hidden/>
-
         <Image style={styles.logo} source={require('../assets/logo.png')}/>
         <Text style={{paddingLeft: 20}}>
           <Text style={{fontSize: 16, fontWeight: '500'}}>{this.state.titleText1}{'\t'}{'\t'}{'\t'}</Text>
@@ -132,13 +137,8 @@ export default class TrangChu extends React.Component {
           <Picker.Item label="Thành phố HCM" value="29" />
           <Picker.Item label="An Giang" value="2"/>
           <Picker.Item label="Hà Nội" value="1"/>
-          <Picker.Item label="JavaScript" value="js"/>
-          <Picker.Item label="JavaScript" value="js"/>
-          <Picker.Item label="JavaScript" value="js"/>
-          <Picker.Item label="JavaScript" value="js"/>
-          <Picker.Item label="JavaScript" value="js"/>
-          <Picker.Item label="JavaScript" value="js"/>
-          <Picker.Item label="JavaScript" value="js"/>
+          <Picker.Item label="Đà Năng" value="16"/>
+        
         </Picker> 
 
         <TouchableOpacity style={styles.btn1} onPress={this.clickTimKiem.bind(this,this.state.txtTimKiem, this.state.txtDiaDiem)}>
