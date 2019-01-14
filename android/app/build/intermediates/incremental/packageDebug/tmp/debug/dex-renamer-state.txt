@@ -1,4 +1,4 @@
-#Mon Jan 14 11:54:23 ICT 2019
-base.0=D\:\\AppFindJob\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Mon Jan 14 16:15:54 ICT 2019
+base.0=D\:\\2018-2019 HKI\\App\\DoAnDiDong\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 path.0=classes.dex

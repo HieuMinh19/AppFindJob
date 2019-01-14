@@ -1,10 +1,14 @@
 import React from 'react';
 import { Text, View, Image, StatusBar, StyleSheet,Select,
          TouchableOpacity, TouchableHighlight,ScrollView,
-         TextInput, Picker,CheckBox} from 'react-native';
+         TextInput, Picker,CheckBox,Alert} from 'react-native';
          import DatePicker from 'react-native-datepicker';
 import styles from '../css/Styless';
-
+import checkLogin from '../api/checkLogin';
+import getToken from '../api/getToken';
+import checknapHoSo from '../api/checkNapHoSo';
+import getASync from '../api/getASync';
+import saveToken from '../api/saveToken';
 export default class TaoCV extends React.Component {
   constructor(props){
     super(props);
@@ -33,6 +37,8 @@ export default class TaoCV extends React.Component {
         currentDate: new Date(),
         cbxtrinhdo: "1",
         cbxtentinh: "29",
+        MaUser:null,
+        result:null,
         //
         errMessage:""
     }
@@ -54,10 +60,22 @@ export default class TaoCV extends React.Component {
   };
 
 
+  componentDidMount(){
+    checknapHoSo()
+      .then(res =>  this.setState({result:res}))
+    getToken()
+    .then(token =>  {checkLogin(token)})
+        .then(res => {
+          this.setState({MaUser:res.user.MaUser})
+        })
+        .catch(err => {
+          console.log(err)
+        });
+  }
 
   clickNapHoSo(){
 
-    fetch("http://192.168.3.29/serverNapCV.php",{
+    fetch("http://10.0.129.175/serverNapCV.php",{
 
         method: 'POST',
         headers: {
@@ -72,8 +90,8 @@ export default class TaoCV extends React.Component {
         "SoDienThoai":this.state.txtSoDT,
         "MaTinh":this.state.cbxtentinh,
         "MaTrinhDo":this.state.cbxtrinhdo,
-        "NgaySinh": this.state.date
-      
+        "NgaySinh": this.state.date,
+        "MaUser": this.state.MaUser,
       })
      })
     .then(  (response) => response.json())
@@ -86,10 +104,18 @@ export default class TaoCV extends React.Component {
   }
  
   render() {
-    
+    if(!this.state.MaUser){
+      Alert.alert('Bạn cần đăng nhập')
+      this.props.navigation.navigate('Home')
+    }
+    if(!this.state.result){
+      Alert.alert('Bạn đã có hồ sơ')
+      this.props.navigation.navigate('Home')
+    }
     return (
    
       <ScrollView>
+        <Text>{this.state.MaUser}</Text>
         <View style={styles.container}>
           <StatusBar hidden/>
 

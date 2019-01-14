@@ -4,10 +4,10 @@
 // import { StackNavigator } from 'react-navigation';
 
 
-var URL =  "http://192.168.3.29/serverFindPartTime.php";
+var URL =  "http://10.0.129.175/serverFindPartTime.php";
 
 // var arr = [];
-// var URL =  "http://192.168.3.29/serverFindPartTime.php";
+// var URL =  "http://10.0.129.175/serverFindPartTime.php";
 // var people = [
 //   {name: 'sdds', age: 29},
 //   {name: 'Sơn Tùng', age: 24},
@@ -118,7 +118,7 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Al
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.3.29/serverFindPartTime.php"
+var URL =  "http://10.0.129.175/serverFindPartTime.php"
 
 export default class showCongViec extends React.Component {
  
