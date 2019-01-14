@@ -15,7 +15,10 @@ export default class DangKi extends React.Component{
         txtMatKhau: "",
         txtRetypeMatKhau: "",
         errMessage:"",
-        uanem:null,
+
+        uname:null
+
+      
       }
      
     }
@@ -29,6 +32,7 @@ export default class DangKi extends React.Component{
     }
     clickRegister(){
       fetch("http://192.168.0.103/serverRegister.php",{
+
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -75,8 +79,6 @@ export default class DangKi extends React.Component{
     };
 
     render() {
-       
-      
         return (
           <View style={styles.container}>
             <StatusBar hidden/>

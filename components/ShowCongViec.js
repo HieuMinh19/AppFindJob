@@ -24,7 +24,6 @@ export default class showCongViec extends React.Component {
      
     componentDidMount(){
       //tiến hành lấy 2 giá trị search ở trang home
-     Alert.alert(ten); 
       getAync('@TimKiem')
       .then(resTen => {
         this.setState({TenCongViec:resTen})  ;

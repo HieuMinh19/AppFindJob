@@ -7,10 +7,12 @@ mysqli_set_charset($db, "utf8");// de lay chu co dau
 $json = file_get_contents("php://input");
 $obj = json_decode($json, TRUE);
 //lay du lieu tu JS
+
 $tencongviec = $obj["tencongviec"];
 $diachi = $obj["tentinh"];
 // $tencongviec = "viet";
 // $diachi =  "2"
+
 
 
 class showcongviec{  
@@ -44,8 +46,10 @@ class showcongviec{
             congviec.MaCTy = congty.MaCTy 
             and 
             congviec.MaTinh = tinh.MaTinh
+
             and (TenCViec LIKE '%".$tencongviec."%')
             and congviec.MaTinh = $diachi;
+
            ");
 
         $arrshowcongviec = array();

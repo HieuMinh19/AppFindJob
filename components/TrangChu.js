@@ -26,8 +26,12 @@ export default class TrangChu extends React.Component {
   }
   componentDidMount(){
     getToken()
-    .then(token => checkLogin(token))
-        .then(res => global.onSignIn(res.user))
+    .then(token => {checkLogin(token)
+        console.log(token)
+    })
+        .then(res => {
+          console.log(res),
+          global.onSignIn(res.user)})
         .catch(err => console.log('LOI CHECK LOGIN', err));
   }
 
@@ -35,9 +39,7 @@ export default class TrangChu extends React.Component {
     this.setState({user});
   }
 
-
   clickTimKiem(TimKiem, DiaDiem){  
-      
     AsyncStorage.setItem("@TimKiem", this.state.txtTimKiem);
     AsyncStorage.setItem("@DiaDiem", this.state.txtDiaDiem);
     this.props.navigation.navigate('showCongViec',{searchTenCV:TimKiem, Matinh:DiaDiem});  
