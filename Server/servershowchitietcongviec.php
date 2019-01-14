@@ -6,7 +6,7 @@ $json = file_get_contents("php://input");
 $obj = json_decode($json, TRUE);
 //lay du lieu tu JS
 $macongviec = $obj["macongviec"];
-//$macongviec = "1";
+$macongviec = "1";
 
 $quert = "SELECT * FROM chitietcongviec WHERE MaCViec =  1";
 $result = mysqli_query($db,$quert);

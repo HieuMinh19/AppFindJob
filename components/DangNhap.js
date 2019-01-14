@@ -6,6 +6,7 @@ import styles from '../css/Styless';
 import global from '../api/global';
 import getToken from '../api/getToken';
 import saveToken from '../api/saveToken';
+import saveAsync from '../api/saveAsync';
 export default class DangNhap extends React.Component{
     constructor(props){
       super(props);
@@ -28,7 +29,7 @@ export default class DangNhap extends React.Component{
     clickLogin(){
       
       //api da thnh cong, khong quan tam den nua
-      fetch("http://10.0.129.175/serverlogin.php",{
+      fetch("http://192.168.0.103/serverlogin.php",{
       method: 'POST',
       headers: {
       Accept: 'application/json',
@@ -49,8 +50,7 @@ export default class DangNhap extends React.Component{
       //vì hàm login trả về chuỗi login
       //nên chỉ cần .then
       .then(response=>{
-        //lệnh console.log để tiến hành debug
-        
+        //lệnh console.log để tiến hành debug  
         //truyền vào tham số respose.user vì response trả về 1 user
         global.onSignIn(response.user);
         this.props.navigation.navigate("Home");
@@ -81,20 +81,7 @@ export default class DangNhap extends React.Component{
     };
 
 
-    render() {   
-      const loginStatus = (
-        <TouchableOpacity style={styles.btn1} onPress={this.clickLogin.bind(this)}>
-              <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Đăng xuất</Text>
-            </TouchableOpacity>
-      )       
-      
-      const logoutStatus = (
-        <TouchableOpacity style={styles.btn1} onPress={this.clickLogin.bind(this)}>
-              <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Đăng nhập</Text>
-            </TouchableOpacity>
-      )       
-      const isLoguotJSX = global.onSignIn ? loginStatus : logoutStatus;
-      
+    render() {         
         return (
           <View style={styles.container}>
             <StatusBar hidden/>
@@ -119,7 +106,9 @@ export default class DangNhap extends React.Component{
 
           <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
 
-          {isLoguotJSX}
+          <TouchableOpacity style={styles.btn1} onPress={this.clickLogin.bind(this)}>
+              <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Đăng nhập</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.btn1} >
               <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}} >Tạo tài khoản</Text>
             </TouchableOpacity>
