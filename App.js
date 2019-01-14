@@ -23,7 +23,7 @@ const App = createStackNavigator({
   PartTime:{screen:PartTime},
   FullTime:{screen:FullTime},
 }, {
-  initialRouteName: 'Home'
+  initialRouteName: 'TaoCV'
 });
 _toggleExpanded = () => {
     this.setState({ collapsed: !this.state.collapsed });

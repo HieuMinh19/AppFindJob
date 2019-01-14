@@ -31,11 +31,8 @@ export default class DangKi extends React.Component{
           .catch(err => console.log('LOI CHECK LOGIN', err));
     }
     clickRegister(){
-<<<<<<< HEAD
       fetch("http://192.168.0.103/serverRegister.php",{
-=======
-      fetch("http://192.168.3.29/serverRegister.php",{
->>>>>>> origin/ducnguyen
+
           method: 'POST',
           headers: {
             'Accept': 'application/json',

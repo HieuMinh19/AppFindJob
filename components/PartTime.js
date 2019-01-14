@@ -3,22 +3,15 @@
 // } from 'react-native';
 // import { StackNavigator } from 'react-navigation';
 
-<<<<<<< HEAD
-var arr = [];
+
 var URL =  "http://192.168.0.103/serverFindPartTime.php";
-var people = [
-  {name: 'sdds', age: 29},
-  {name: 'Sơn Tùng', age: 24},
-];
-=======
+
 // var arr = [];
 // var URL =  "http://192.168.3.29/serverFindPartTime.php";
 // var people = [
 //   {name: 'sdds', age: 29},
 //   {name: 'Sơn Tùng', age: 24},
 // ];
->>>>>>> origin/ducnguyen
-
 // export default class TrangChu extends React.Component {
  
 //   constructor(props){
