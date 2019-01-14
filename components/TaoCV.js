@@ -57,7 +57,7 @@ export default class TaoCV extends React.Component {
 
   clickNapHoSo(){
 
-    fetch("http://192.168.0.103/serverNapCV.php",{
+    fetch("http://192.168.3.29/serverNapCV.php",{
 
         method: 'POST',
         headers: {

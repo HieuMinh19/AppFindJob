@@ -2,13 +2,15 @@
 $db = mysqli_connect("localhost","root","","datadidong");//ket noi data
 mysqli_set_charset($db, "utf8");// de lay chu co dau
 //
-$json = file_get_contents("php://input");
-$obj = json_decode($json, TRUE);
-//lay du lieu tu JS
-$macongviec = $obj["macongviec"];
-$macongviec = "1";
+// $json = file_get_contents("php://input");
+// $obj = json_decode($json, TRUE);
+// //lay du lieu tu JS
+// $macongviec = $obj["macongviec"];
+// $macongviec = "1";
+$MaCViec = $_GET['MaCViec'];
 
-$quert = "SELECT * FROM chitietcongviec WHERE MaCViec =  1";
+
+$quert = "SELECT * FROM chitietcongviec WHERE MaCViec =  $MaCViec";
 $result = mysqli_query($db,$quert);
 $arrshowchitietcongviec = array();
 class showchitietcongviec{
