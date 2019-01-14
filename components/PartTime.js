@@ -4,7 +4,7 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Al
 import { StackNavigator } from 'react-navigation';
 
 var arr = [];
-var URL =  "http://10.0.129.175/serverFindPartTime.php";
+var URL =  "http://192.168.0.103/serverFindPartTime.php";
 var people = [
   {name: 'sdds', age: 29},
   {name: 'Sơn Tùng', age: 24},

@@ -8,9 +8,9 @@ $json = file_get_contents("php://input");
 $obj = json_decode($json, TRUE);
 //lay du lieu tu JS
 $tencongviec = $obj["tencongviec"];
-//$tencongviec = "viet";
 $diachi = $obj["tentinh"];
-  //$diachi = "nha";
+// $tencongviec = "viet";
+// $diachi =  "2"
 
 
 class showcongviec{  
@@ -44,6 +44,8 @@ class showcongviec{
             congviec.MaCTy = congty.MaCTy 
             and 
             congviec.MaTinh = tinh.MaTinh
+            and (TenCViec LIKE '%".$tencongviec."%')
+            and congviec.MaTinh = $diachi;
            ");
 
         $arrshowcongviec = array();
@@ -51,8 +53,7 @@ class showcongviec{
             while($row = mysqli_fetch_array($result)){              
                 array_push($arrshowcongviec, new showcongviec( $row["TenCTy"],$row["TenCViec"],$row["TenTinh"], $row["LuongCViec"],$row["YeuCauCViec"],$row["KinhNghiemCViec"], $row["TrinhDoCViec"] ));
             }
-            echo json_encode($arrshowcongviec); 
-            // $errMess = "1";
-        
+          
+            echo json_encode($arrshowcongviec);        
 
 ?>

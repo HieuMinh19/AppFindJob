@@ -1,16 +1,14 @@
-
-//le minh hieu
-// nguyen phuc duc
-
 import React from 'react';
 import { Text, View, Image, StatusBar, 
          TouchableOpacity, TouchableHighlight,
-         TextInput, Alert} from 'react-native';
+         TextInput, AsyncStorage, Picker, Alert} from 'react-native';
 import styles from '../css/Styless';
 import global from '../api/global';
 import checkLogin from '../api/checkLogin';
 import getToken from '../api/getToken';
+import getASync from '../api/getASync';
 import saveToken from '../api/saveToken';
+const temp = null;
 export default class TrangChu extends React.Component {
   constructor(props){
     super(props);
@@ -20,7 +18,7 @@ export default class TrangChu extends React.Component {
       titleText2: "Ðịa điểm",
       bodyText2: "tỉnh hoặc thành phố",
       txtTimKiem: "",
-      txtDiaDiem: "",
+      txtDiaDiem: 29,
       txtStatus:"",  
       user: null,   
     }
@@ -33,47 +31,16 @@ export default class TrangChu extends React.Component {
         .catch(err => console.log('LOI CHECK LOGIN', err));
   }
 
-
   onSignin(user){
     this.setState({user});
   }
 
 
-  clickTimKiem(){    
-     fetch("http://10.0.129.175/servershowcongviec.php",{
-         method: 'POST',
-         headers: {
-           'Accept': 'application/json',
-           'Content-Type': 'application/json',
-     },
-     body: JSON.stringify({
-         "tencongviec": this.state.txtTimKiem,
-         "tentinh": this.state.txtDiaDiem,
-       //  "txtRetypeMatKhau": this.state.txtRetypeMatKhau,
-         })
-        
-      })
-     .then((response) => response.json())
-     .then((responseJson) => {       
-       this.setState({errMessage:responseJson.kq}) 
-        //Alert.alert('them thanh cong')
-         //setTimeout(() => Alert.alert('tạo tài khoản không thành công'), 2);
-         //Alert.alert('login ok bên Js')
-         
-        //  if(this.state.errMessage == "1"){
-        //console.log(this.state.txtTimKiem);
-        this.props.navigation.navigate('showCongViec')
-        //  }   else{
-       //Alert.alert('Thanh Cong')
-        //  } 
-        // if(this.state.errMessage == "1"){
-        //   Alert.alert('Đăng Kí Thành Công')
-        // }   else{
-        //   Alert.alert('Đăng Kí Thất Bại')
-        // }         
-     } )
-     .catch((error)=>  
-        Alert.alert('fail'));
+  clickTimKiem(TimKiem, DiaDiem){  
+      
+    AsyncStorage.setItem("@TimKiem", this.state.txtTimKiem);
+    AsyncStorage.setItem("@DiaDiem", this.state.txtDiaDiem);
+    this.props.navigation.navigate('showCongViec',{searchTenCV:TimKiem, Matinh:DiaDiem});  
    }
 
   DangXuat = ()=>{
@@ -148,7 +115,7 @@ export default class TrangChu extends React.Component {
         </Text>
 
         <TextInput style={styles.txtInput1} 
-                   onChangeText={(txtTimKiem) => this.setState({txtTimKiem})} 
+                   onChangeText={(txtTimKiem) => this.setState({txtTimKiem: txtTimKiem})}
                    value={this.state.txtTimKiem}/>
 
         <Text style={{paddingLeft: 20}}>
@@ -156,11 +123,23 @@ export default class TrangChu extends React.Component {
           <Text style={{fontSize: 13}}>{this.state.bodyText2}</Text>
         </Text>
 
-        <TextInput style={styles.txtInput1}  
-                   onChangeText={(txtDiaDiem) => this.setState({txtDiaDiem})}
-                   value={this.state.txtDiaDiem}/>
+        <Picker
+          selectedValue={this.state.txtDiaDiem}
+          style={{ height: 50, width: 100 }}
+          onValueChange={(itemValue, itemIndex) => this.setState({txtDiaDiem: itemValue})}>
+          <Picker.Item label="Thành phố HCM" value="29" />
+          <Picker.Item label="An Giang" value="2"/>
+          <Picker.Item label="Hà Nội" value="1"/>
+          <Picker.Item label="JavaScript" value="js"/>
+          <Picker.Item label="JavaScript" value="js"/>
+          <Picker.Item label="JavaScript" value="js"/>
+          <Picker.Item label="JavaScript" value="js"/>
+          <Picker.Item label="JavaScript" value="js"/>
+          <Picker.Item label="JavaScript" value="js"/>
+          <Picker.Item label="JavaScript" value="js"/>
+        </Picker> 
 
-        <TouchableOpacity style={styles.btn1} onPress={this.clickTimKiem.bind(this)}>
+        <TouchableOpacity style={styles.btn1} onPress={this.clickTimKiem.bind(this,this.state.txtTimKiem, this.state.txtDiaDiem)}>
           <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Tìm việc</Text>
         </TouchableOpacity>
 

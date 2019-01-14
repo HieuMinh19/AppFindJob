@@ -8,9 +8,11 @@
   },
   "dependencies": {
     "react": "16.6.0-alpha.8af6728",
+    "react-mixin": "^2.0.2",
     "react-native": "^0.57.8",
     "react-native-datepicker": "^1.7.2",
-    "react-navigation": "^2.18.0"
+    "react-navigation": "^2.18.0",
+    "react-timer-mixin": "^0.13.4"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

@@ -23,14 +23,12 @@ export default class DangKi extends React.Component{
       getToken()
       .then(token => checkLogin(token))
           .then(res => {
-           
             this.setState({uname:res.user.username})
-            console.log(this.state.uname)
           })
           .catch(err => console.log('LOI CHECK LOGIN', err));
     }
     clickRegister(){
-      fetch("http://10.0.129.175/serverRegister.php",{
+      fetch("http://192.168.0.103/serverRegister.php",{
           method: 'POST',
           headers: {
             'Accept': 'application/json',
