@@ -4,7 +4,11 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity
 
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
+<<<<<<< HEAD
 var URL =  "http://192.168.0.103/showchitietcongviec.php"
+=======
+var URL =  "http://192.168.3.29/showchitietcongviec.php"
+>>>>>>> origin/ducnguyen
 
 export default class TrangChu extends React.Component {
  

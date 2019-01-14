@@ -29,8 +29,12 @@ export default class TaoCV extends React.Component {
         txtSoDT:"",
         txtTenCTY: "",
         txtChucDanh: "",
-        dtNgaySinh:"2018-05-15",
+        date: "2018-05-15",
         currentDate: new Date(),
+        cbxtrinhdo: "1",
+        cbxtentinh: "29",
+        //
+        errMessage:""
     }
   }
   
@@ -52,7 +56,11 @@ export default class TaoCV extends React.Component {
 
 
   clickNapHoSo(){
+<<<<<<< HEAD
     fetch("http://192.168.0.103/serverNapCV.php",{
+=======
+    fetch("http://192.168.3.29/serverNapCV.php",{
+>>>>>>> origin/ducnguyen
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -60,32 +68,20 @@ export default class TaoCV extends React.Component {
     },
     body: JSON.stringify({
       
-        "txtTaiKhoan": this.state.txtTaiKhoan,
-        "txtMatKhau": this.state.txtMatKhau,
-        "txtRetypeMatKhau": this.state.txtRetypeMatKhau,
-        
+        "TenNXinViec": this.state.txtHoDem,
+        "EmailNXinViec": this.state.txteMail,
+        "DiaChiNXViec": this.state.txtDiaChi,
+        "SoDienThoai":this.state.txtSoDT,
+        "MaTinh":this.state.cbxtentinh,
+        "MaTrinhDo":this.state.cbxtrinhdo,
+        "NgaySinh": this.state.date
       
       })
      })
     .then(  (response) => response.json())
     .then(  (responseJson) => {       
-      this.setState({errMessage:responseJson.kq}) 
-       //Alert.alert('them thanh cong')
-        //setTimeout(() => Alert.alert('tạo tài khoản không thành công'), 2);
-        if(this.state.errMessage == "Thành Công"){
-          Alert.alert('Đăng Kí Thành Công')
-        }   else{
-          Alert.alert('Đăng Kí Thất Bại')
-        } 
-        //this.state.errMessage = ""
+        this.setState({errMessage:responseJson.kq}) 
         
-         this.state.errMessage = "";
-         this.state. txtTaiKhoan= "",
-         this.state.txtMatKhau= "",
-        this.state.txtRetypeMatKhau= ""
-
-      // this.props.navigation.navigate('Login')
-
     } )
     .catch((error)=>  
     Alert.alert('Đăng Kí Thất Bại tại catch'));
@@ -102,11 +98,12 @@ export default class TaoCV extends React.Component {
           <Text style={style.title_TaoCVa}>
               <Text style={style.title_TaoCV}>{this.state.titleTaoCV}{'\t'}{'\t'}{'\t'}</Text>
           </Text>
+          <Text style={{paddingLeft: 20, color:'red', fontSize: 20}}>{this.state.errMessage}</Text>
           <Text style={style.ititle}>
               <Text style={style.title}>{this.state.titleHoDem}{'\t'}{'\t'}{'\t'}</Text>
           </Text>
 
-          <TextInput style={styles.txtInput1} 
+          <TextInput style={styles.txtInput1 } 
                     onChangeText={(txtHoDem) => this.setState({txtHoDem})} 
                     value={this.state.txtHoDem}/>
 
@@ -125,7 +122,8 @@ export default class TaoCV extends React.Component {
 
           <DatePicker
             style={{width: 200}}
-            dtNgaySinh={this.state.dtNgaySinh}
+            date={this.state.date}
+            date={this.state.date}
             mode="date"
             placeholder="select date"
             format="YYYY-MM-DD"
@@ -144,7 +142,7 @@ export default class TaoCV extends React.Component {
                 marginLeft: 36
               }
             }}
-            onDateChange={(dtNgaySinh) => {this.setState({dtNgaySinh: dtNgaySinh})}}
+            onDateChange={(date) => {this.setState({date: date})}}
             
            />
 
@@ -159,7 +157,19 @@ export default class TaoCV extends React.Component {
           <Text style={style.ititle}>
             <Text style={style.title}>{this.state.titleTenTinh}{'\t'}{'\t'}{'\t'}</Text>
           </Text>
-
+{/* combobox ten tinh */}
+        <Picker
+          selectedValue={this.state.cbxtentinh}
+          style={{ height: 50, width: 100 }}
+          onValueChange={(itemValue) => this.setState({cbxtentinh: itemValue})}>
+          <Picker.Item label="tp Hồ Chí Minh" value="29" />
+          <Picker.Item label="Hà Nội" value="1" />
+          <Picker.Item label="Đà Nẵng" value="16" />
+          <Picker.Item label="Khánh Hòa" value="32" />
+          <Picker.Item label="Cần Thơ" value="15" />
+         
+  
+        </Picker> 
          <Text style={style.ititle}>
             <Text style={style.title}>{this.state.titleSoDT}{'\t'}{'\t'}{'\t'}</Text>
         </Text>
@@ -170,36 +180,30 @@ export default class TaoCV extends React.Component {
           <Text style={style.title}>{this.state.titleText3}{'\t'}{'\t'}{'\t'}</Text>
           <Text style={{fontSize: 13}}>{this.state.bodyText3}</Text>
         </Text>
-
+{/* Trinh Do ng xin viec */}
         <Picker
-          selectedValue={this.state.language}
+          selectedValue={this.state.cbxtrinhdo}
           style={{ height: 50, width: 100 }}
-          onValueChange={(itemValue) => this.setState({language: itemValue})}>
-          <Picker.Item label="hồ chí minh" value="1" />
-          <Picker.Item label="nha trang" value="2" />
-          <Picker.Item label="hà nội" value="3" />
-          <Picker.Item label="đà nẵng" value="4" />
-  
+          onValueChange={(itemValue) => this.setState({cbxtrinhdo: itemValue})}>
+          <Picker.Item label="Phổ Thông" value="1" />
+          <Picker.Item label="Trung Cấp" value="2" />
+          <Picker.Item label="Cao Đẳng" value="3" />
+          <Picker.Item label="Cử Nhân" value="4" />
+          <Picker.Item label="Kĩ Sữ" value="5" />
+          <Picker.Item label="Thạc Sĩ" value="6" />
+          <Picker.Item label="Tiến Sĩ" value="7" />
         </Picker> 
-
- 
 
         <Text style={style.ititle}>
           <Text style={{fontSize: 16, fontWeight: '500'}}>{this.state.titleNgayVaoLam}</Text>
         </Text>
        
           <TouchableOpacity style={styles.btn1} onPress={this.clickNapHoSo.bind(this)}>
-            <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Nạp Hồ Sơ</Text>
+            <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Tạo Hồ Sơ</Text>
           </TouchableOpacity> 
         </View>
-             
       </ScrollView>
 
-
-
-
-
-      
     );
   }
 }

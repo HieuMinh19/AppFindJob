@@ -1,5 +1,12 @@
 const checkLogin = (token) => (
+<<<<<<< HEAD
     fetch('http://192.168.0.103/check_login.php',
+=======
+
+    fetch('http://192.168.3.29/check_login.php',
+
+
+>>>>>>> origin/ducnguyen
     {   
         method: 'POST',
         headers: {

@@ -26,8 +26,12 @@ export default class TrangChu extends React.Component {
   }
   componentDidMount(){
     getToken()
-    .then(token => checkLogin(token))
-        .then(res => global.onSignIn(res.user))
+    .then(token => {checkLogin(token)
+        console.log(token)
+    })
+        .then(res => {
+          console.log(res),
+          global.onSignIn(res.user)})
         .catch(err => console.log('LOI CHECK LOGIN', err));
   }
 
@@ -36,11 +40,49 @@ export default class TrangChu extends React.Component {
   }
 
 
+<<<<<<< HEAD
   clickTimKiem(TimKiem, DiaDiem){  
       
     AsyncStorage.setItem("@TimKiem", this.state.txtTimKiem);
     AsyncStorage.setItem("@DiaDiem", this.state.txtDiaDiem);
     this.props.navigation.navigate('showCongViec',{searchTenCV:TimKiem, Matinh:DiaDiem});  
+=======
+  clickTimKiem(){    
+     fetch("http://192.168.3.29/servershowcongviec.php",{
+         method: 'POST',
+         headers: {
+           'Accept': 'application/json',
+           'Content-Type': 'application/json',
+     },
+     body: JSON.stringify({
+         "tencongviec": this.state.txtTimKiem,
+         "tentinh": this.state.txtDiaDiem,
+       //  "txtRetypeMatKhau": this.state.txtRetypeMatKhau,
+         })
+        
+      })
+     .then((response) => response.json())
+     .then((responseJson) => {       
+       this.setState({errMessage:responseJson.kq}) 
+        //Alert.alert('them thanh cong')
+         //setTimeout(() => Alert.alert('tạo tài khoản không thành công'), 2);
+         //Alert.alert('login ok bên Js')
+         
+        //  if(this.state.errMessage == "1"){
+        //console.log(this.state.txtTimKiem);
+        this.props.navigation.navigate('showCongViec')
+        //  }   else{
+       //Alert.alert('Thanh Cong')
+        //  } 
+        // if(this.state.errMessage == "1"){
+        //   Alert.alert('Đăng Kí Thành Công')
+        // }   else{
+        //   Alert.alert('Đăng Kí Thất Bại')
+        // }         
+     } )
+     .catch((error)=>  
+        Alert.alert('fail'));
+>>>>>>> origin/ducnguyen
    }
 
   DangXuat = ()=>{

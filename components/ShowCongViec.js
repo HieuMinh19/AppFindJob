@@ -1,9 +1,154 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
 } from 'react-native';
 import getAync from '../api/getASync';
 import searchCongViec from '../api/searchCongViec';
 var URL =  "http://192.168.0.103/servershowcongviec.php";
+=======
+// import React from 'react';
+// import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
+// } from 'react-native';
+// import global from '../api/global';
+// var showcongty = Array();
+// var arr = new Array(1, 2, 4, 5, 9, 6);
+// var URL =  "http://192.168.3.29/servershowcongviec.php"
+
+// export default class showCongViec extends React.Component {
+ 
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//           dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2}),
+//           user: null,
+//         } 
+//         global.onSignIn = this.onSignin.bind(this);
+//       this.taohang = this.taohang.bind(this);
+//       //this.ChiTietCViec = this.ChiTietCViec.bind(this);
+//       //this.ChiTietCViec = this.ChiTietCViec.bind(this, 'Ahihi')
+//       }
+//       onSignin(user){
+//         this.setState({user});
+//       }
+//       ChiTietCViec=(a)=>{
+//         this.props.navigation.navigate('Register')  
+//       }
+
+      
+
+//     fetchData(){
+//         fetch(URL, {method: "POST", body: null})
+//         .then((response) => response.json())
+//         .then((responseData) => {
+//           this.setState({
+//             dataSource: this.state.dataSource.cloneWithRows(responseData)
+           
+//           });  
+       
+//         })
+//         .catch((error) => {
+//             Alert.alert(error);
+//             //Alert.alert('Không có công việc nào được tìm th',)
+//         });
+//       }
+
+//     componentDidMount(){
+//         this.fetchData();
+//     }
+//     taohang(property){
+//         return(
+//           <View style ={styles.hang}>     
+//            <TouchableOpacity style={styles.ChiTietCV} onPress={this.ChiTietCViec.bind(this)} >
+//                 <Text style={styles.test}>{property.TenCTy}</Text>  
+//                 <Text style={styles.test}>{property.TenCViec}</Text>  
+//                 <Text style={styles.test}>{property.LuongCViec}</Text>  
+//                 <Text style={styles.test}>{property.TenTinh}</Text>    
+//                 <Text style={styles.test}>{property.YeuCauCViec}</Text>   
+//                 <Text style={styles.test}>{property.TrinhDoCViec}</Text>   
+//                 <Text style={styles.test}>{property.KinhNghiemCViec}</Text>   
+//             </TouchableOpacity>   
+//           </View>
+//         );
+//       }
+//     render(){
+//       const { user } = this.state;
+//     const showUsername = (
+       
+//       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.username: ''}</Text>
+      
+//     )    
+//     const hideUsername = (
+//       //kiểm tra xem user có tồn tại hay không,
+//       // nếu có tiến hành gán giá trị
+//       //this.state.user.name => tiến hành lấy thuộc tính name trong array của user trả về
+//       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}></Text>
+//     )    
+//     const username = this.state.user ? showUsername : hideUsername;
+//         return(
+//             <ScrollView>
+// {/* onPress={ this.findPartTime.bind(this)} */}
+//                 <View style={styles.LuaChon}>
+//                          <TouchableOpacity style={styles.btnLuaChon} >
+//                             <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>PartTime</Text>
+//                          </TouchableOpacity>
+//                          <TouchableOpacity style={styles.btnLuaChon} >
+//                             <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Full Time</Text>
+//                          </TouchableOpacity>
+//                 </View>
+
+//                 <View style={styles.container}>  
+//                 {username}                            
+//                     <ListView dataSource={this.state.dataSource}
+//                             renderRow = {this.taohang}
+//                     />                      
+//                 </View>          
+//                 {/* <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text> */}
+//             </ScrollView>   
+//         );
+//     }
+// }
+
+// var styles = StyleSheet.create({
+
+  
+
+
+
+
+//     container: {
+//       flex:1
+//     }, 
+//     danhsach:{
+//       flex:1
+//     },
+//     hang:{
+//       flexDirection: 'column',
+//       flex: 1,
+//       //justifyContent:'center',
+//       //alignItems:'center',
+//       marginLeft: 50,
+//       marginTop:15,
+//     },
+//     hienthi:{
+//       flex:1,
+      
+//     },
+//     test:{
+//       color:'red',
+      
+//     }
+//   }) 
+
+
+import React from 'react';
+import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
+} from 'react-native';
+import global from '../api/global';
+var showcongty = Array();
+var arr = new Array(1, 2, 4, 5, 9, 6);
+var URL =  "http://192.168.3.29/servershowcongviec.php"
+
+>>>>>>> origin/ducnguyen
 export default class showCongViec extends React.Component {
     constructor(props){
         super(props);
@@ -19,8 +164,9 @@ export default class showCongViec extends React.Component {
       }
     
       ChiTietCViec=(a)=>{
-        this.props.navigation.navigate('Register')  
+        this.props.navigation.navigate('ChiTietCViec',{TenCTy: a})  
       }
+<<<<<<< HEAD
      
     componentDidMount(){
       //tiến hành lấy 2 giá trị search ở trang home
@@ -59,10 +205,41 @@ export default class showCongViec extends React.Component {
     
        
     }    
+=======
+
+      PartTime=(a)=>{
+        this.props.navigation.navigate('PartTime')  
+      }
+      FullTime=(a)=>{
+        this.props.navigation.navigate('FullTime')  
+      }
+
+    fetchData(){
+        fetch(URL, {method: "POST", body: null})
+        .then((response) => response.json())
+        .then((responseData) => {
+          this.setState({
+            dataSource: this.state.dataSource.cloneWithRows(responseData)
+           
+          });  
+       
+        })
+        .catch((error) => {
+            Alert.alert(error);
+            //Alert.alert('Không có công vi?c nào du?c tìm th',)
+        });
+      }
+
+    componentDidMount(){
+
+        this.fetchData();
+    }
+>>>>>>> origin/ducnguyen
     taohang(property){
         return(
           <View style ={styless.list01}>     
-           <TouchableOpacity style ={styless.list02} onPress={this.ChiTietCViec.bind(this)} >
+           <TouchableOpacity style ={styless.list02} onPress={this.ChiTietCViec.bind(this,property.TenCTy)} >
+           
                 <Text style={styless.txtTenCViec}>{property.TenCViec}</Text>  
                 <Text style={styless.txtTenCty}>{property.TenCTy}</Text> 
                 <Text style={styless.txtTinh}>{property.TenTinh}</Text>     
@@ -83,7 +260,11 @@ export default class showCongViec extends React.Component {
       }
 
       static navigationOptions = {
+<<<<<<< HEAD
         title: 'Tìm việc',
+=======
+        title: 'Tìm Việc',
+>>>>>>> origin/ducnguyen
         headerStyle:{
           backgroundColor: '#000'
         },
@@ -97,16 +278,25 @@ export default class showCongViec extends React.Component {
         return(
             <ScrollView>
                 <View style={styless.LuaChon}>
-                         <TouchableOpacity style={styless.btnLuaChon} >
+                         <TouchableOpacity style={styless.btnLuaChon} onPress={this.PartTime}>
                             <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>PartTime</Text>
                          </TouchableOpacity>
-                         <TouchableOpacity style={styless.btnLuaChon} >
+                         <TouchableOpacity style={styless.btnLuaChon} onPress={this.FullTime}>
                             <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>Full Time</Text>
                          </TouchableOpacity>
                 </View>
 
+<<<<<<< HEAD
                 <View style={styless.container}>   
                 {/* <Text>{this.props.navigation.state.params.searchTenCV}</Text>                         */}
+=======
+                <View>
+                    <Text style={styless.title}>Tất Cả Công Việc</Text>
+                </View>  
+
+                <View style={styless.container}>  
+                {username}                            
+>>>>>>> origin/ducnguyen
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}
                     />                      
@@ -126,7 +316,12 @@ export default class showCongViec extends React.Component {
 }
 
 var styless = StyleSheet.create({
+  title:{
+    
+    paddingTop: 10,
+    fontSize: 30,
 
+  },
   LuaChon:{  
     height:40,
     flex: 1,
@@ -156,7 +351,7 @@ var styless = StyleSheet.create({
     list01:{
       flexDirection: 'column',
       flex: 1,
-      marginTop:15,
+     //  marginTop:5,
     },
     list02:{
       borderBottomWidth: 1,

@@ -4,7 +4,11 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity
 
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
+<<<<<<< HEAD
 var URL =  "http://192.168.0.103/servershowchitietcongviec.php"
+=======
+var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
+>>>>>>> origin/ducnguyen
 
 export default class TrangChu extends React.Component {
  
@@ -16,6 +20,10 @@ export default class TrangChu extends React.Component {
         }
       }
 
+
+
+
+      
     fetchData(){
         fetch(URL, {method: "POST", body: null})
         .then((response) => response.json())
@@ -30,6 +38,7 @@ export default class TrangChu extends React.Component {
       }
 
     componentDidMount(){
+
         this.fetchData();
     }
 
@@ -50,7 +59,11 @@ export default class TrangChu extends React.Component {
       }
     render(){
         return(
+
+            
+
             <ScrollView>
+              <Text>{this.props.navigation.state.params.TenCTy}</Text>
                 <View style={styles.container}>                              
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}
