@@ -54,7 +54,7 @@ export default class TrangChu extends React.Component {
     saveToken('');
   }
   DangNhap=()=>{
-    
+    console.log("vao trong onpress đăng nhập rồi");
     this.props.navigation.navigate('Login')  
   }
 

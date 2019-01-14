@@ -4,7 +4,7 @@
 // import global from '../api/global';
 // var showcongty = Array();
 // var arr = new Array(1, 2, 4, 5, 9, 6);
-// var URL =  "http://192.168.3.29/servershowcongviec.php"
+// var URL =  "http://192.168.1.8/servershowcongviec.php"
 
 // export default class showCongViec extends React.Component {
  
@@ -138,7 +138,7 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Al
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.3.29/servershowcongviec.php"
+var URL =  "http://192.168.1.8/servershowcongviec.php"
 import searchcongviecandmatinh from '../api/searchcongviecandmatinh'
 export default class showCongViec extends React.Component {
  
@@ -157,6 +157,7 @@ export default class showCongViec extends React.Component {
         this.setState({user});
       }
       ChiTietCViec=(a)=>{
+        console.log("lay macviec trong file showcongviec", a);
         this.props.navigation.navigate('ChiTietCViec',{MaCViec: a})  
       }
 
@@ -167,32 +168,18 @@ export default class showCongViec extends React.Component {
         this.props.navigation.navigate('FullTime')  
       }
 
-    // fetchData(){
-    //     fetch(URL, {method: "POST", body: null})
-    //     .then((response) => response.json())
-    //     .then((responseData) => {
-    //       this.setState({
-    //         dataSource: this.state.dataSource.cloneWithRows(responseData)
-           
-    //       });  
-       
-    //     })
-    //     .catch((error) => {
-    //         Alert.alert(error);
-    //         //Alert.alert('Không có công vi?c nào du?c tìm th',)
-    //     });
-    //   }
-
     componentDidMount(){
       const tencongviec = this.props.navigation.state.params.searchTenCV;
       const matinh = this.props.navigation.state.params.Matinh;
-      //console.log(tencongviec);
-      //console.log(matinh);
+      console.log(tencongviec);
+      console.log(matinh);
       searchcongviecandmatinh(tencongviec,matinh)
       .then(responseData => {
         this.setState({
+         
           dataSource: this.state.dataSource.cloneWithRows(responseData)
         });  
+        console.log(responseData);
       })
       .catch(err => console.log(err));
         // this.fetchData();

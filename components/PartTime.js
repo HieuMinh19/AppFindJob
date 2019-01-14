@@ -4,10 +4,10 @@
 // import { StackNavigator } from 'react-navigation';
 
 
-var URL =  "http://192.168.3.29/serverFindPartTime.php";
+var URL =  "http://192.168.1.8/serverFindPartTime.php";
 
 // var arr = [];
-// var URL =  "http://192.168.3.29/serverFindPartTime.php";
+// var URL =  "http://192.168.1.8/serverFindPartTime.php";
 // var people = [
 //   {name: 'sdds', age: 29},
 //   {name: 'Sơn Tùng', age: 24},
@@ -118,7 +118,7 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Al
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.3.29/serverFindPartTime.php"
+var URL =  "http://192.168.1.8/serverFindPartTime.php"
 
 export default class showCongViec extends React.Component {
  
@@ -136,8 +136,9 @@ export default class showCongViec extends React.Component {
       onSignin(user){
         this.setState({user});
       }
-      ChiTietCViec=(a)=>{
-        this.props.navigation.navigate('ChiTietCViec')  
+      ChiTietCViecpart=(a)=>{
+        console.log("lay macviec trong file parttime", a);
+        this.props.navigation.navigate('ChiTietCViec',{MaCViec: a})  
       }
       FullTime=(a)=>{
         this.props.navigation.navigate('FullTime')  
@@ -166,7 +167,7 @@ export default class showCongViec extends React.Component {
     taohang(property){
         return(
           <View style ={styless.list01}>     
-           <TouchableOpacity style ={styless.list02} onPress={this.ChiTietCViec.bind(this)} >
+           <TouchableOpacity style ={styless.list02} onPress={this.ChiTietCViecpart.bind(this,property.MaCViec)} >
                 <Text style={styless.txtTenCViec}>{property.TenCViec}</Text>  
                 <Text style={styless.txtTenCty}>{property.TenCTy}</Text> 
                 <Text style={styless.txtTinh}>{property.TenTinh}</Text>     

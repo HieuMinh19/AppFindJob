@@ -9,7 +9,7 @@ import getMaCViec from '../api/getMaCViec';
 import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
-var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
+var URL =  "http://192.168.1.8/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
@@ -29,13 +29,14 @@ export default class TrangChu extends React.Component {
           .then(res => {
             this.setState({mauser:res.user.MaUser})
 
-            console.log("ccccccccccccccccccccc",res.user.MaUser)
+            // console.log("ccccccccccccccccccccc",res.user.MaUser)
           })
           .catch(err => console.log('LOI CHECK LOGIN', err));
 
 
 
         const macviec = this.props.navigation.state.params.MaCViec;
+        console.log("macviec lay trong chitiet_parttime",macviec),
         getMaCViec(macviec)
         .then(responseData => {
           this.setState({

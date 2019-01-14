@@ -5,6 +5,7 @@ import TrangChu from "./components/TrangChu";
 import DangNhap from "./components/DangNhap";
 import DangKi from "./components/DangKi";
 import TaoCV from "./components/TaoCV";
+import DoiMatKhau from "./components/DoiMatKhau";
 //import TaoCV2 from "./components/TaoCV2";
 import showCongViec from "./components/ShowCongViec";
 import PartTime from "./components/PartTime";
@@ -15,6 +16,7 @@ const App = createStackNavigator({
   Home: { screen: TrangChu},
   Login: {screen: DangNhap},
   Register:{screen: DangKi},
+  DoiMatKhau:{screen: DoiMatKhau},
   TaoCV:{screen:TaoCV},
   //TaoCV2:{screen:TaoCV2},
   ChiTietCViec:{screen:ChiTietCViec},
