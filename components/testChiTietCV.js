@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity
 } from 'react-native';
 
-var URL =  "http://192.168.3.29/showchitietcongviec.php"
+var URL =  "http://10.0.129.175/showchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  

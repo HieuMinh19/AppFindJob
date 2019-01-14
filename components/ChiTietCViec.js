@@ -9,7 +9,7 @@ import getMaCViec from '../api/getMaCViec';
 import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
-var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
+var URL =  "http://10.0.129.175/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
