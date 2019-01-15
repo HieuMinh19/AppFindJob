@@ -14,21 +14,13 @@ export default class DangKi extends React.Component{
         txtTaiKhoan: "",
         txtMatKhau: "",
         txtRetypeMatKhau: "",
-        errMessage:"",  
+        errMessage:"",      
       }
      
     }
-    componentDidMount(){
-      getToken()
-      .then(token => checkLogin(token))
-          .then(res => {
-            this.setState({uname:res.user.MaUser})
-          })
-          .catch(err => console.log('LOI CHECK LOGIN', err));
-    }
-    clickRegister(){
-      fetch("http://192.168.0.103/serverRegister.php",{
-
+    clickDoiMatKhau(){
+        console.log("vao duoc click DoiMatKhau");
+      fetch("http://192.168.0.103/serverDoiMatKhau.php",{
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -36,8 +28,8 @@ export default class DangKi extends React.Component{
       },
       body: JSON.stringify({
           "txtTaiKhoan": this.state.txtTaiKhoan,
-          "txtMatKhau": this.state.txtMatKhau,
-          "txtRetypeMatKhau": this.state.txtRetypeMatKhau,
+          "txtMatKhauCu": this.state.txtMatKhau,
+          "txtRetypeMatKhauMoi": this.state.txtRetypeMatKhau,
           })
        })
       .then(  (response) => response.json())
@@ -56,12 +48,15 @@ export default class DangKi extends React.Component{
            this.state. txtTaiKhoan= "",
            this.state.txtMatKhau= "",
           this.state.txtRetypeMatKhau= ""
+
+        // this.props.navigation.navigate('Login')
+
       } )
       .catch((error)=>  
-      Alert.alert('Đăng Kí Thất Bại tại catch'));
+      Alert.alert("Thất Bại"));
     }
     static navigationOptions = {
-        title: 'Tìm việc',
+        title: 'Đổi Mật Khẩu',
         headerStyle:{
           backgroundColor: '#000'
         },
@@ -98,8 +93,8 @@ export default class DangKi extends React.Component{
 
           <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
 
-            <TouchableOpacity style={styles.btn1} onPress={this.clickRegister.bind(this)}>
-              <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Tạo tài khoản</Text>
+            <TouchableOpacity style={styles.btn1} onPress={this.clickDoiMatKhau.bind(this)}>
+              <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Đổi Mật Khẩu</Text>
             </TouchableOpacity>
           </View>
         );

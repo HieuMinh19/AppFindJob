@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity
+import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
 } from 'react-native';
 
 var showcongty = Array();
@@ -9,7 +9,7 @@ import getMaCViec from '../api/getMaCViec';
 import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
-var URL =  "http://10.0.129.175/servershowchitietcongviec.php"
+var URL =  "http://192.168.0.103/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
@@ -19,21 +19,18 @@ export default class TrangChu extends React.Component {
           
           dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2}),
           mauser:null,
+          errMessage:"",
+
         }
       }
 
     componentDidMount(){
-
       getToken()
       .then(token => checkLogin(token))
           .then(res => {
             this.setState({mauser:res.user.MaUser})
-
-            console.log("ccccccccccccccccccccc",res.user.MaUser)
           })
           .catch(err => console.log('LOI CHECK LOGIN', err));
-
-
 
         const macviec = this.props.navigation.state.params.MaCViec;
         getMaCViec(macviec)
@@ -45,14 +42,39 @@ export default class TrangChu extends React.Component {
         .catch(err => console.log(err));
     }
 
+    NopHoSo(){
+      const macv = this.props.navigation.state.params.MaCViec;
+      console.log("ABCXYZ",macv);
+      console.log('MAUSER DNJSAHD', this.state.mauser)
+        fetch('http://192.168.0.103/serverNopHoSo.php',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({ 
+              "MaUser": this.state.mauser,
+              "MaCongViec": macv
+             })
+        })
+        .then(res => {res.json()})
+          .then(res => {
+            Alert.alert('Nộp hồ sơ thành công')
+          })
+          .catch(err=>{
+            Alert.alert("nộp hồ sơ không thành công");
+            console.log(err)
+          })
+        }
+
     taohang(property){
         return(
           <View style ={styles.hang}>     
-           <TouchableOpacity style={styles.ChiTietCV} onPress={this.ChiTietCV} >
+           <TouchableOpacity style={styles.ChiTietCV} onPress={this.NopHoSo} >
                 <Text style={styles.test}>{property.YeuCauCViec}</Text>  
                 <Text style={styles.test}>{property.KinhNghiemCViec}</Text>
-                <Text style={styles.test}>{property.TrinhDoCViec}</Text>     
-             
+                <Text style={styles.test}>{property.TrinhDoCViec}</Text>
             </TouchableOpacity>   
           </View>
         );
@@ -70,11 +92,15 @@ export default class TrangChu extends React.Component {
                 <View style={styles.container}>                              
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}
-                    />                      
+                    />    
+                     <TouchableOpacity style={styles.btn1} onPress={this.NopHoSo.bind(this)}>
+                  <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Nộp hồ sơ</Text>
+                </TouchableOpacity>          
+
+
+                <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>        
                 </View>          
-                <View>
-                  {/* <Text>{this.props.navigation.state.params.thamso}</Text> */}
-                </View>  
+            
             </ScrollView>   
 
         );

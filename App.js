@@ -10,13 +10,13 @@ import showCongViec from "./components/ShowCongViec";
 import PartTime from "./components/PartTime";
 import FullTime from "./components/FullTime";
 import ChiTietCViec from "./components/ChiTietCViec";
-
+import DoiMatKhau from "./components/DoiMatKhau";
 const App = createStackNavigator({
   Home: { screen: TrangChu},
   Login: {screen: DangNhap},
   Register:{screen: DangKi},
   TaoCV:{screen:TaoCV},
-  //TaoCV2:{screen:TaoCV2},
+  DoiMatKhau:{screen:DoiMatKhau},
   ChiTietCViec:{screen:ChiTietCViec},
   showCongViec:{screen:showCongViec},
   

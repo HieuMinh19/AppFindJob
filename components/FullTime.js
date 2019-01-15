@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
 } from 'react-native';
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://10.0.129.175/serverFindFullTime.php"
+var URL =  "http://192.168.0.103/serverFindFullTime.php"
 
 export default class showCongViec extends React.Component {
  
@@ -24,7 +23,7 @@ export default class showCongViec extends React.Component {
         this.setState({user});
       }
       ChiTietCViec=(a)=>{
-        this.props.navigation.navigate('ChiTietCViec')  
+        this.props.navigation.navigate('ChiTietCViec',{MaCViec: a})  
       }
 
       PartTime=(a)=>{
@@ -53,7 +52,7 @@ export default class showCongViec extends React.Component {
     taohang(property){
         return(
           <View style ={styless.list01}>     
-           <TouchableOpacity style ={styless.list02} onPress={this.ChiTietCViec.bind(this)} >
+           <TouchableOpacity style ={styless.list02} onPress={this.ChiTietCViec.bind(this,property.MaCViec)} >
                 <Text style={styless.txtTenCViec}>{property.TenCViec}</Text>  
                 <Text style={styless.txtTenCty}>{property.TenCTy}</Text> 
                 <Text style={styless.txtTinh}>{property.TenTinh}</Text>     
