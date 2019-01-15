@@ -15,6 +15,7 @@ $obj = json_decode($json, TRUE);
 
 
 class showcongviec{  
+    var $MaCViec;
     var $TenCTy;
     var $TenCViec;
     var $TenTinh;
@@ -23,8 +24,8 @@ class showcongviec{
     var $KinhNghiemCViec;
     var $TrinhDoCViec;
  
-    function showcongviec($_TenCTy, $_TenCViec,$_TenTinh, $_LuongCViec,$_YeuCauCViec, $_KinhNghiemCViec,$_TrinhDoCViec){
-        
+    function showcongviec($_MaCViec,$_TenCTy, $_TenCViec,$_TenTinh, $_LuongCViec,$_YeuCauCViec, $_KinhNghiemCViec,$_TrinhDoCViec){
+        $this->MaCViec = $_MaCViec;
         $this->TenCTy = $_TenCTy;
         $this->TenCViec = $_TenCViec;  
         $this->TenTinh = $_TenTinh;
@@ -37,7 +38,7 @@ class showcongviec{
     }
 }
 
-        $result = mysqli_query($db,"SELECT TenCTy, TenCViec, TenTinh, LuongCViec, YeuCauCViec, KinhNghiemCViec, TrinhDoCViec 
+        $result = mysqli_query($db,"SELECT congviec.MaCViec,TenCTy, TenCViec, TenTinh, LuongCViec, YeuCauCViec, KinhNghiemCViec, TrinhDoCViec 
         FROM congty, congviec,tinh,chitietcongviec 
         WHERE 
             congviec.MaCViec = chitietcongviec.MaCViec 
@@ -52,7 +53,7 @@ class showcongviec{
         $arrshowcongviec = array();
       
             while($row = mysqli_fetch_array($result)){              
-                array_push($arrshowcongviec, new showcongviec( $row["TenCTy"],$row["TenCViec"],$row["TenTinh"], $row["LuongCViec"],$row["YeuCauCViec"],$row["KinhNghiemCViec"], $row["TrinhDoCViec"] ));
+                array_push($arrshowcongviec, new showcongviec( $row["MaCViec"],$row["TenCTy"],$row["TenCViec"],$row["TenTinh"], $row["LuongCViec"],$row["YeuCauCViec"],$row["KinhNghiemCViec"], $row["TrinhDoCViec"] ));
             }
             echo json_encode($arrshowcongviec); 
             // $errMess = "1";

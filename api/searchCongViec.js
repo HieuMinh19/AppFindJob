@@ -1,5 +1,5 @@
 const searchCongViec = (TenCV,DiaChi) => {
-    fetch("http://10.0.129.175/servershowcongviec.php",{
+    fetch("http://192.168.0.103/servershowcongviec.php",{
         method: 'POST',
         headers: {
           'Accept': 'application/json',

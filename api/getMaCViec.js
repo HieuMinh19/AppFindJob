@@ -1,6 +1,6 @@
 const getMaCViec = (macviec) => {
     let url;
-  url =  `http://10.0.129.175/servershowchitietcongviec.php?MaCViec=${macviec}`;
+  url =  `http://192.168.0.103/servershowchitietcongviec.php?MaCViec=${macviec}`;
     
     return fetch(url)
     .then(res => res.json());

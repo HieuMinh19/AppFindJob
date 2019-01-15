@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Text, View, StatusBar, Image,
-         TouchableOpacity, KeyboardAvoidingView,
+         TouchableOpacity, KeyboardAvoidingView,StyleSheet,
          TextInput, Alert, AsyncStorage } from 'react-native';
 import styles from '../css/Styless';
 import global from '../api/global';
@@ -29,7 +30,7 @@ export default class DangNhap extends React.Component{
     clickLogin(){
       
       //api da thnh cong, khong quan tam den nua
-      fetch("http://10.0.129.175/serverlogin.php",{
+      fetch("http://192.168.0.103/serverlogin.php",{
 
       method: 'POST',
       headers: {
@@ -70,6 +71,12 @@ export default class DangNhap extends React.Component{
        
     }
 
+    dangki(){
+      this.props.navigation.navigate("Register");
+    }
+    DoiMatKhau(){
+      this.props.navigation.navigate("DoiMatKhau");
+    }
     static navigationOptions = {
         title: 'Đăng nhập',
         headerStyle:{
@@ -110,12 +117,30 @@ export default class DangNhap extends React.Component{
           <TouchableOpacity style={styles.btn1} onPress={this.clickLogin.bind(this)}>
               <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Đăng nhập</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn1} >
+            <TouchableOpacity style={styles.btn1}   onPress={this.dangki.bind(this)}>
               <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}} >Tạo tài khoản</Text>
             </TouchableOpacity>
+              
+              <View>
+              
+                  <TouchableOpacity style={styless.btn12} onPress={this.DoiMatKhau.bind(this)} >
+                      <Text style={styless.txtbtn} >Đổi mật khẩu</Text>
+                  </TouchableOpacity>
+              </View>
+
+
           </View>
         );
       }
 
 }
+
+var styless = StyleSheet.create({
+  txtbtn:{
+    fontSize: 16, color:'#0B610B', fontWeight:'500'
+  },
+  btn12:{
+    color: '#0B610B',
+  }
+})
 
