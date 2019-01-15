@@ -9,7 +9,7 @@ import getMaCViec from '../api/getMaCViec';
 import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
-var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
+var URL =  "http://192.168.0.126/servershowchitietcongviec.php"
 
 
 export default class TrangChu extends React.Component {
@@ -45,11 +45,22 @@ export default class TrangChu extends React.Component {
         .catch(err => console.log(err));
     }
 
+    static navigationOptions = {
+      title: 'Tìm Việc',
+      headerStyle:{
+        backgroundColor: '#000'
+      },
+      headerTintColor: '#fff',
+      headerTintStyle:{
+        fontWeight: 'bold',
+      }
+  };
+
     NopHoSo(){
       const macv = this.props.navigation.state.params.MaCViec;
       console.log("ABCXYZ",macv);
       console.log('MAUSER DNJSAHD', this.state.mauser)
-        fetch('http://192.168.3.29/serverNopHoSo.php',
+        fetch('http://192.168.0.126/serverNopHoSo.php',
         {
             method: 'POST',
             headers: {
@@ -73,15 +84,18 @@ export default class TrangChu extends React.Component {
 
     taohang(property){
         return(
-          <View style ={styles.hang}>     
-           <TouchableOpacity style={styles.ChiTietCV} onPress={this.NopHoSo} >
-                <Text style={styles.test}>{property.YeuCauCViec}</Text>  
-                <Text style={styles.test}>{property.KinhNghiemCViec}</Text>
-                <Text style={styles.test}>{property.TrinhDoCViec}</Text>
-                <Text style={styless.txtTenCViec}>{property.TenCViec}</Text>  
-                <Text style={styless.txtTenCty}>{property.TenCTy}</Text> 
-                <Text style={styless.txtTinh}>{property.TenTinh}</Text>     
-                <Text style={styless.txtLuong}>{property.LuongCViec}</Text>   
+          <View>     
+           <TouchableOpacity style={styles.list01} onPress={this.NopHoSo} >
+                <Text style={styles.txtTenCV}>{property.TenCViec}</Text> 
+                <Text style={styles.txtTieude}>* Địa chỉ</Text>
+                <Text style={styles.txtChiTiet}>{property.TenCTy}</Text> 
+                <Text style={styles.txtChiTiet}>{property.TenTinh}</Text>   
+                <Text style={styles.txtTieude}>* Mô tả công việc</Text>
+                <Text style={styles.txtChiTiet}>Yêu cầu công việc: {property.YeuCauCViec}</Text>  
+                <Text style={styles.txtChiTiet}>Kinh nghiệm: {property.KinhNghiemCViec}</Text>
+                <Text style={styles.txtChiTiet}>Trình độ học vấn: {property.TrinhDoCViec}</Text> 
+                <Text style={styles.txtTieude}>* Quyền lợi được hưởng</Text>
+                <Text style={styles.txtChiTiet}>Lương: {property.LuongCViec}</Text>     
             </TouchableOpacity>   
           </View>
         );
@@ -100,9 +114,10 @@ export default class TrangChu extends React.Component {
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}
                     />    
-                     <TouchableOpacity style={styles.btn1} onPress={this.NopHoSo.bind(this)}>
-                  <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Nộp hồ sơ</Text>
-                </TouchableOpacity>          
+                    
+                     <TouchableOpacity style={styles.btnNopCV} onPress={this.NopHoSo.bind(this)}>
+                         <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Nộp hồ sơ</Text>
+                     </TouchableOpacity>          
 
 
                 <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>        
@@ -113,100 +128,39 @@ export default class TrangChu extends React.Component {
         );
     }
 }
-var styless = StyleSheet.create({
-  title:{
-    
-    paddingTop: 10,
-    fontSize: 30,
-
-  },
-  LuaChon:{  
-    height:40,
-    flex: 1,
-    flexDirection: 'row',
-    alignItems:'center',
-   //marginTop: 100,
-    marginLeft: 25
-  },
-  btnLuaChon:{
-    marginTop: 20,
-    marginLeft: 10,
-    backgroundColor: '#2E2EFE',
-    borderRadius: 40,
-    alignItems: 'center',
-    padding: 8,
-    marginRight:3,
-    width:100,
-    justifyContent: 'space-between',
-    // flexDirection: 'now',
-    width: '40%',
-},
-
-  
+var styles = StyleSheet.create({
     container: {
-      flex:1
+      flex: 1,
+      justifyContent: 'space-around',
+      paddingHorizontal: 20,
+      paddingBottom: 100
     }, 
     list01:{
       flexDirection: 'column',
-      flex: 1,
-     //  marginTop:5,
+      marginBottom: 40
     },
-    list02:{
-      borderBottomWidth: 1,
-      borderBottomColor: '#6E6E6E',
-    },
-    txtTenCViec:{
+    txtTieude:{
       color: '#000',
       fontWeight: 'bold',
-      fontSize: 15,
-      marginLeft: 15
+      fontSize: 17
     },
-    txtTenCty:{
-      color: '#585858',
-      fontSize: 13,
-      marginLeft: 15,
-    },
-    txtTinh:{
-      color: '#585858',
-      fontSize: 13,
-      marginLeft: 15,
-    },
-    txtLuong:{
-      color: '#0B610B',
-      fontSize: 13,
-      fontWeight: 'bold',
-      marginLeft: 15,
-    },
-    txtYeuCau:{
-      color: '#B40404',
-      fontSize: 13,
-      marginLeft: 15,
-    }
-  }) 
-var styles = StyleSheet.create({
-    container: {
-      flex:1
-    }, 
-    danhsach:{
-      flex:1
-    },
-    hang:{
-      flexDirection: 'column',
-      flex: 1,
-      //justifyContent:'center',
-      //alignItems:'center',
-      marginLeft: 50,
-      marginTop:15,
-    },
-    ChiTietCV:{
 
-    },
-    hienthi:{
-      flex:1,
+    txtChiTiet:{
+      color:'#000',
+      marginLeft: 20,
+      fontSize:  15 ,
+      marginLeft: 15
       
     },
-    test:{
-      color:'red',
-      
-    }
+    txtTenCV:{
+      color: '#000',
+      fontWeight: 'bold',
+      fontSize:  22 ,
+    },
+    btnNopCV:{
+      backgroundColor: '#FF3300',
+      borderRadius: 25,
+      alignItems: 'center',
+      padding: 8
+    },
   }) 

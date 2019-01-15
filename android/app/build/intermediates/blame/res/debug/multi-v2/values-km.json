@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AppFindJob\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
+            "outputFile": "D:\\Developers\\JavaScript\\React Native\\AppFindJob\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9a867b5cc389c883a24a6c57eb49b679\\res\\values-km\\values-km.xml",
+                    "source": "C:\\Users\\trngo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1f1ade01d757526d792e1e19ea018584\\res\\values-km\\values-km.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\af0f3d9857461a07ba52c0c31cfd36a5\\res\\values-km\\values-km.xml",
+                    "source": "C:\\Users\\trngo\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\c1f6caf3f1ce22fdeb6e63a1773b2641\\res\\values-km\\values-km.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

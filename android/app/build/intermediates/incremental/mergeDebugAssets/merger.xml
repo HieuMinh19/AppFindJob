@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\AppFindJob\android\app\src\main\assets"/><source path="D:\AppFindJob\android\app\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\AppFindJob\android\app\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\assets"/><source path="D:\Developers\JavaScript\React Native\AppFindJob\android\app\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\debug\assets"/></dataSet></merger>

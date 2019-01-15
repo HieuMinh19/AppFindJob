@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
 } from 'react-native';
@@ -8,9 +5,9 @@ import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
 
-var URL =  "http://192.168.3.29/servershowcongviec.php"
+var URL =  "http://192.168.0.126/servershowcongviec.php"
 
-var URL =  "http://192.168.3.29/servershowcongviec.php"
+var URL =  "http://192.168.0.126/servershowcongviec.php"
 
 import searchcongviecandmatinh from '../api/searchcongviecandmatinh'
 export default class showCongViec extends React.Component {
@@ -112,7 +109,7 @@ export default class showCongViec extends React.Component {
                 </View>
 
                 <View>
-                    <Text style={styless.title}>Tất Cả Công Việc</Text>
+                    <Text style={styless.title}>Danh sách tuyển dụng</Text>
                 </View>  
 
                 <View style={styless.container}>  
@@ -128,9 +125,9 @@ export default class showCongViec extends React.Component {
 
 var styless = StyleSheet.create({
   title:{
-    
     paddingTop: 10,
-    fontSize: 30,
+    fontSize: 27,
+    marginLeft: 10,
 
   },
   LuaChon:{  
@@ -167,32 +164,28 @@ var styless = StyleSheet.create({
     list02:{
       borderBottomWidth: 1,
       borderBottomColor: '#6E6E6E',
+      marginTop: 10
     },
     txtTenCViec:{
       color: '#000',
       fontWeight: 'bold',
-      fontSize: 15,
+      fontSize: 18,
       marginLeft: 15
     },
     txtTenCty:{
       color: '#585858',
-      fontSize: 13,
+      fontSize: 15,
       marginLeft: 15,
     },
     txtTinh:{
       color: '#585858',
-      fontSize: 13,
+      fontSize: 15,
       marginLeft: 15,
     },
     txtLuong:{
       color: '#0B610B',
-      fontSize: 13,
+      fontSize: 15,
       fontWeight: 'bold',
       marginLeft: 15,
     },
-    txtYeuCau:{
-      color: '#B40404',
-      fontSize: 13,
-      marginLeft: 15,
-    }
   }) 

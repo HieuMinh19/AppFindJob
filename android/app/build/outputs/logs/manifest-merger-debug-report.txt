@@ -1,153 +1,153 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\f1039bb625a4bcf4c6ca680dd3ad0aee\AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\9a867b5cc389c883a24a6c57eb49b679\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f5a0f613e73d0d922c607a6ac8693ee5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\5e616849d84842732d319230ff548fc7\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\0b21cb0d2860104ab0427df3ddaa881f\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\ad63578066511fe7d3989087ccc089b1\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\0593da236855ab643825e29df91e8589\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\af0f3d9857461a07ba52c0c31cfd36a5\AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\8cca0e971c4cc3c7157257677370b090\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\8b99776bb501a2ecfe60b85f1fafcd44\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\b6d6e8fb3247380319320e7434ea5002\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\c16ee407df3173cc06d27490f0443578\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\b03799fe49a623715a5880a0419cefc7\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\bfff6edf31a0b799efb2e69cf7c396b5\AndroidManifest.xml:2:1-13:12
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6de732dce6fbe3d1065ebea07c161c19\AndroidManifest.xml:1:1-3:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c6c494c2c441bba0cf52da29b7bd9a81\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\af964963ca5c6e3b2c738d9fd877d6a7\AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\ed6fd634840346014ca63726831b30e3\AndroidManifest.xml:2:1-9:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ff6bd440b0143e76ebe37d20ea4fc4fa\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9004d627b5c1f91bc24e1df910f1f65d\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\d51c99d354e0f623b0f04b807d35eeab\AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\1f1ade01d757526d792e1e19ea018584\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\7a88659ce6eaca14bf920d2754ef762b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\57b328c9325d100758db95cb95994913\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\e64f845b00ad826d1b640f6e32875ecb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\a3676f8f10ad4978443a107bac247823\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a59407d26287595aa082e0a606a6640a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c1f6caf3f1ce22fdeb6e63a1773b2641\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\15de1138c6c795220d2b27b0d173b514\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\2e5295d1d5204f1589ef7ddf1ef5fb79\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\5638e413afddfd9faf56e36992e172a8\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\578a9644a08a405f04b6da8fa7a792e4\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\da22dce134756ee47f364803faede46c\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\e24df179feed7a427ade1c616428893e\AndroidManifest.xml:2:1-13:12
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\af0f71c2fd599741379fb14f9c1dd62d\AndroidManifest.xml:1:1-3:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\80c86608aa9dabb048cde3e2a0c853df\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2147ab4ee6dbdf4f2aae015d7a96a3de\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\d9da5d503e0fdb650f1480a674f4d12a\AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0322f47fc12487f64bd6a8c7d1d32867\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\22de9c0c23d975eee60fc6a036202c15\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
 	package
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:2:5-28
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:2:5-28
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:4:5-67
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:4:5-67
 	android:name
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:5:5-77
-MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\f1039bb625a4bcf4c6ca680dd3ad0aee\AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\f1039bb625a4bcf4c6ca680dd3ad0aee\AndroidManifest.xml:11:5-78
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:5:5-77
+MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\d51c99d354e0f623b0f04b807d35eeab\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\d51c99d354e0f623b0f04b807d35eeab\AndroidManifest.xml:11:5-78
 	android:name
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:5:22-75
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:5:22-75
 application
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:7:5-24:19
-MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\f1039bb625a4bcf4c6ca680dd3ad0aee\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\f1039bb625a4bcf4c6ca680dd3ad0aee\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\bfff6edf31a0b799efb2e69cf7c396b5\AndroidManifest.xml:11:5-20
-MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\bfff6edf31a0b799efb2e69cf7c396b5\AndroidManifest.xml:11:5-20
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6de732dce6fbe3d1065ebea07c161c19\AndroidManifest.xml:2:3-17
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6de732dce6fbe3d1065ebea07c161c19\AndroidManifest.xml:2:3-17
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:7:5-24:19
+MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\d51c99d354e0f623b0f04b807d35eeab\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\d51c99d354e0f623b0f04b807d35eeab\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\e24df179feed7a427ade1c616428893e\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\e24df179feed7a427ade1c616428893e\AndroidManifest.xml:11:5-20
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\af0f71c2fd599741379fb14f9c1dd62d\AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\af0f71c2fd599741379fb14f9c1dd62d\AndroidManifest.xml:2:3-17
 	android:label
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:9:7-39
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:9:7-39
 	android:icon
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:10:7-41
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:10:7-41
 	android:allowBackup
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:11:7-34
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:11:7-34
 	android:theme
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:12:7-38
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:12:7-38
 	android:name
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:8:7-38
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:8:7-38
 activity#com.appsimple.MainActivity
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:13:7-22:18
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:13:7-22:18
 	android:label
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:15:9-41
 	android:windowSoftInputMode
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:17:9-51
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:17:9-51
 	android:configChanges
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:16:9-79
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:16:9-79
 	android:name
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:14:9-37
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:14:9-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:18:9-21:25
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:18:9-21:25
 action#android.intent.action.MAIN
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:19:13-65
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:19:13-65
 	android:name
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:19:21-62
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:19:21-62
 category#android.intent.category.LAUNCHER
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:20:13-73
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:20:13-73
 	android:name
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:20:23-70
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:20:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:23:7-84
+ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:23:7-84
 	android:name
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:23:17-81
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:23:17-81
 uses-sdk
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\f1039bb625a4bcf4c6ca680dd3ad0aee\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\f1039bb625a4bcf4c6ca680dd3ad0aee\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\9a867b5cc389c883a24a6c57eb49b679\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\9a867b5cc389c883a24a6c57eb49b679\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f5a0f613e73d0d922c607a6ac8693ee5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f5a0f613e73d0d922c607a6ac8693ee5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\5e616849d84842732d319230ff548fc7\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\5e616849d84842732d319230ff548fc7\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\0b21cb0d2860104ab0427df3ddaa881f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\0b21cb0d2860104ab0427df3ddaa881f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\ad63578066511fe7d3989087ccc089b1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\ad63578066511fe7d3989087ccc089b1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\0593da236855ab643825e29df91e8589\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\0593da236855ab643825e29df91e8589\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\af0f3d9857461a07ba52c0c31cfd36a5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\af0f3d9857461a07ba52c0c31cfd36a5\AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\8cca0e971c4cc3c7157257677370b090\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\8cca0e971c4cc3c7157257677370b090\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\8b99776bb501a2ecfe60b85f1fafcd44\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\8b99776bb501a2ecfe60b85f1fafcd44\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\b6d6e8fb3247380319320e7434ea5002\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\b6d6e8fb3247380319320e7434ea5002\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\c16ee407df3173cc06d27490f0443578\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\c16ee407df3173cc06d27490f0443578\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\b03799fe49a623715a5880a0419cefc7\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\b03799fe49a623715a5880a0419cefc7\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\bfff6edf31a0b799efb2e69cf7c396b5\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\bfff6edf31a0b799efb2e69cf7c396b5\AndroidManifest.xml:7:5-9:41
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c6c494c2c441bba0cf52da29b7bd9a81\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c6c494c2c441bba0cf52da29b7bd9a81\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\af964963ca5c6e3b2c738d9fd877d6a7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\af964963ca5c6e3b2c738d9fd877d6a7\AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\ed6fd634840346014ca63726831b30e3\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\ed6fd634840346014ca63726831b30e3\AndroidManifest.xml:5:5-7:41
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ff6bd440b0143e76ebe37d20ea4fc4fa\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ff6bd440b0143e76ebe37d20ea4fc4fa\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9004d627b5c1f91bc24e1df910f1f65d\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] C:\Users\PhucDuc\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9004d627b5c1f91bc24e1df910f1f65d\AndroidManifest.xml:20:5-44
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\d51c99d354e0f623b0f04b807d35eeab\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.57.8] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\react-native-0.57.8.aar\d51c99d354e0f623b0f04b807d35eeab\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\1f1ade01d757526d792e1e19ea018584\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\1f1ade01d757526d792e1e19ea018584\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\7a88659ce6eaca14bf920d2754ef762b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\7a88659ce6eaca14bf920d2754ef762b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\57b328c9325d100758db95cb95994913\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\57b328c9325d100758db95cb95994913\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\e64f845b00ad826d1b640f6e32875ecb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\e64f845b00ad826d1b640f6e32875ecb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\a3676f8f10ad4978443a107bac247823\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\a3676f8f10ad4978443a107bac247823\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a59407d26287595aa082e0a606a6640a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\a59407d26287595aa082e0a606a6640a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c1f6caf3f1ce22fdeb6e63a1773b2641\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\c1f6caf3f1ce22fdeb6e63a1773b2641\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\15de1138c6c795220d2b27b0d173b514\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\15de1138c6c795220d2b27b0d173b514\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\2e5295d1d5204f1589ef7ddf1ef5fb79\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\2e5295d1d5204f1589ef7ddf1ef5fb79\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\5638e413afddfd9faf56e36992e172a8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\5638e413afddfd9faf56e36992e172a8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\578a9644a08a405f04b6da8fa7a792e4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\578a9644a08a405f04b6da8fa7a792e4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\da22dce134756ee47f364803faede46c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\da22dce134756ee47f364803faede46c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\e24df179feed7a427ade1c616428893e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\e24df179feed7a427ade1c616428893e\AndroidManifest.xml:7:5-9:41
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\80c86608aa9dabb048cde3e2a0c853df\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\80c86608aa9dabb048cde3e2a0c853df\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2147ab4ee6dbdf4f2aae015d7a96a3de\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2147ab4ee6dbdf4f2aae015d7a96a3de\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\d9da5d503e0fdb650f1480a674f4d12a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\d9da5d503e0fdb650f1480a674f4d12a\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0322f47fc12487f64bd6a8c7d1d32867\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\0322f47fc12487f64bd6a8c7d1d32867\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\22de9c0c23d975eee60fc6a036202c15\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\trngo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\22de9c0c23d975eee60fc6a036202c15\AndroidManifest.xml:20:5-44
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\Developers\JavaScript\React Native\AppFindJob\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
