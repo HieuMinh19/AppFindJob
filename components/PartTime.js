@@ -1,10 +1,14 @@
+
+
 import React from 'react';
 import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Alert
 } from 'react-native';
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-var URL =  "http://192.168.0.103/serverFindPartTime.php"
+
+var URL =  "http://192.168.3.29/serverFindPartTime.php"
+
 
 export default class showCongViec extends React.Component {
  
@@ -58,9 +62,9 @@ export default class showCongViec extends React.Component {
                 <Text style={styless.txtTenCty}>{property.TenCTy}</Text> 
                 <Text style={styless.txtTinh}>{property.TenTinh}</Text>     
                 <Text style={styless.txtLuong}>{property.LuongCViec}</Text>  
-                <Text style={styless.txtYeuCau}>{property.YeuCauCViec}</Text>   
+                {/* <Text style={styless.txtYeuCau}>{property.YeuCauCViec}</Text>   
                 <Text style={styless.txtYeuCau}>{property.TrinhDoCViec}</Text>   
-                <Text style={styless.txtYeuCau}>{property.KinhNghiemCViec}</Text>   
+                <Text style={styless.txtYeuCau}>{property.KinhNghiemCViec}</Text>    */}
             </TouchableOpacity>   
           </View>
         );

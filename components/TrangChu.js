@@ -54,6 +54,7 @@ export default class TrangChu extends React.Component {
     saveToken('');
   }
   DangNhap=()=>{
+
     this.props.navigation.navigate('Login')  
   }
 

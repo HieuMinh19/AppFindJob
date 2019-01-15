@@ -14,13 +14,18 @@ export default class DangKi extends React.Component{
         txtTaiKhoan: "",
         txtMatKhau: "",
         txtRetypeMatKhau: "",
-        errMessage:"",      
+        errMessage:"",
+
+        //uname:null
+
+      
       }
      
     }
+
     clickDoiMatKhau(){
         console.log("vao duoc click DoiMatKhau");
-      fetch("http://192.168.0.103/serverDoiMatKhau.php",{
+      fetch("http://192.168.3.29/serverDoiMatKhau.php",{
           method: 'POST',
           headers: {
             'Accept': 'application/json',

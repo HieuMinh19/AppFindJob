@@ -19,7 +19,9 @@ export default StyleSheet.create({
       borderRadius: 25,
       alignItems: 'center',
       padding: 8
+      
     },
+    
     btn2:{
       paddingVertical:10,
     },

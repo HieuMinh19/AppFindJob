@@ -9,7 +9,8 @@ import getMaCViec from '../api/getMaCViec';
 import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
-var URL =  "http://192.168.0.103/servershowchitietcongviec.php"
+var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
+
 
 export default class TrangChu extends React.Component {
  
@@ -29,10 +30,12 @@ export default class TrangChu extends React.Component {
       .then(token => checkLogin(token))
           .then(res => {
             this.setState({mauser:res.user.MaUser})
+
           })
           .catch(err => console.log('LOI CHECK LOGIN', err));
 
         const macviec = this.props.navigation.state.params.MaCViec;
+        console.log("macviec lay trong chitiet_parttime",macviec),
         getMaCViec(macviec)
         .then(responseData => {
           this.setState({
@@ -46,7 +49,7 @@ export default class TrangChu extends React.Component {
       const macv = this.props.navigation.state.params.MaCViec;
       console.log("ABCXYZ",macv);
       console.log('MAUSER DNJSAHD', this.state.mauser)
-        fetch('http://192.168.0.103/serverNopHoSo.php',
+        fetch('http://192.168.3.29/serverNopHoSo.php',
         {
             method: 'POST',
             headers: {
@@ -75,6 +78,10 @@ export default class TrangChu extends React.Component {
                 <Text style={styles.test}>{property.YeuCauCViec}</Text>  
                 <Text style={styles.test}>{property.KinhNghiemCViec}</Text>
                 <Text style={styles.test}>{property.TrinhDoCViec}</Text>
+                <Text style={styless.txtTenCViec}>{property.TenCViec}</Text>  
+                <Text style={styless.txtTenCty}>{property.TenCTy}</Text> 
+                <Text style={styless.txtTinh}>{property.TenTinh}</Text>     
+                <Text style={styless.txtLuong}>{property.LuongCViec}</Text>   
             </TouchableOpacity>   
           </View>
         );
@@ -106,7 +113,76 @@ export default class TrangChu extends React.Component {
         );
     }
 }
+var styless = StyleSheet.create({
+  title:{
+    
+    paddingTop: 10,
+    fontSize: 30,
 
+  },
+  LuaChon:{  
+    height:40,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems:'center',
+   //marginTop: 100,
+    marginLeft: 25
+  },
+  btnLuaChon:{
+    marginTop: 20,
+    marginLeft: 10,
+    backgroundColor: '#2E2EFE',
+    borderRadius: 40,
+    alignItems: 'center',
+    padding: 8,
+    marginRight:3,
+    width:100,
+    justifyContent: 'space-between',
+    // flexDirection: 'now',
+    width: '40%',
+},
+
+  
+    container: {
+      flex:1
+    }, 
+    list01:{
+      flexDirection: 'column',
+      flex: 1,
+     //  marginTop:5,
+    },
+    list02:{
+      borderBottomWidth: 1,
+      borderBottomColor: '#6E6E6E',
+    },
+    txtTenCViec:{
+      color: '#000',
+      fontWeight: 'bold',
+      fontSize: 15,
+      marginLeft: 15
+    },
+    txtTenCty:{
+      color: '#585858',
+      fontSize: 13,
+      marginLeft: 15,
+    },
+    txtTinh:{
+      color: '#585858',
+      fontSize: 13,
+      marginLeft: 15,
+    },
+    txtLuong:{
+      color: '#0B610B',
+      fontSize: 13,
+      fontWeight: 'bold',
+      marginLeft: 15,
+    },
+    txtYeuCau:{
+      color: '#B40404',
+      fontSize: 13,
+      marginLeft: 15,
+    }
+  }) 
 var styles = StyleSheet.create({
     container: {
       flex:1
