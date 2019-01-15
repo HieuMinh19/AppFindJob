@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AppFindJob\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "D:\\Developers\\JavaScript\\React Native\\AppFindJob\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9a867b5cc389c883a24a6c57eb49b679\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\trngo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1f1ade01d757526d792e1e19ea018584\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
