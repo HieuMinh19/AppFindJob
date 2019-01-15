@@ -54,7 +54,7 @@ export default class TrangChu extends React.Component {
     saveToken('');
   }
   DangNhap=()=>{
-    console.log("vao trong onpress đăng nhập rồi");
+
     this.props.navigation.navigate('Login')  
   }
 
@@ -63,7 +63,10 @@ export default class TrangChu extends React.Component {
     this.props.navigation.navigate('Register')  
   }
 
-  
+  TaoCV=()=>{
+   
+    this.props.navigation.navigate('TaoCV')  
+  }
 
   static navigationOptions = {
     title: 'Tìm việc',
@@ -150,6 +153,9 @@ export default class TrangChu extends React.Component {
        
         <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangKi}>
           <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng kí</Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.TaoCV}>
+          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Tạo hồ sơ</Text>
         </TouchableHighlight>
         <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
       </View>

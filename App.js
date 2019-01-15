@@ -16,9 +16,8 @@ const App = createStackNavigator({
   Home: { screen: TrangChu},
   Login: {screen: DangNhap},
   Register:{screen: DangKi},
-  DoiMatKhau:{screen: DoiMatKhau},
   TaoCV:{screen:TaoCV},
-  //TaoCV2:{screen:TaoCV2},
+  DoiMatKhau:{screen:DoiMatKhau},
   ChiTietCViec:{screen:ChiTietCViec},
   showCongViec:{screen:showCongViec},
   

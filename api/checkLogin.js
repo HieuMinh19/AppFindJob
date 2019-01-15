@@ -1,6 +1,8 @@
 const checkLogin = (token) => (
+
     // console.log("sdsdssssssssssssssssss"),
-    fetch('http://192.168.1.8/check_login.php',
+    fetch('http://192.168.3.29/check_login.php',
+
 
     {   
         

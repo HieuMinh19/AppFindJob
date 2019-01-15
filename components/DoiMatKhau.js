@@ -22,17 +22,10 @@ export default class DangKi extends React.Component{
       }
      
     }
-    // componentDidMount(){
-    //   getToken()
-    //   .then(token => checkLogin(token))
-    //       .then(res => {
-    //         this.setState({uname:res.user.MaUser})
-    //       })
-    //       .catch(err => console.log('LOI CHECK LOGIN', err));
-    // }
+
     clickDoiMatKhau(){
         console.log("vao duoc click DoiMatKhau");
-      fetch("http://192.168.1.8/serverDoiMatKhau.php",{
+      fetch("http://192.168.3.29/serverDoiMatKhau.php",{
           method: 'POST',
           headers: {
             'Accept': 'application/json',

@@ -14,11 +14,7 @@ export default class DangKi extends React.Component{
         txtTaiKhoan: "",
         txtMatKhau: "",
         txtRetypeMatKhau: "",
-        errMessage:"",
-
-        //uname:null
-
-      
+        errMessage:"",  
       }
      
     }
@@ -31,7 +27,9 @@ export default class DangKi extends React.Component{
           .catch(err => console.log('LOI CHECK LOGIN', err));
     }
     clickRegister(){
-      fetch("http://192.168.1.8/serverRegister.php",{
+
+      fetch("http://192.168.3.29/serverRegister.php",{
+
 
           method: 'POST',
           headers: {
@@ -60,9 +58,6 @@ export default class DangKi extends React.Component{
            this.state. txtTaiKhoan= "",
            this.state.txtMatKhau= "",
           this.state.txtRetypeMatKhau= ""
-
-        // this.props.navigation.navigate('Login')
-
       } )
       .catch((error)=>  
       Alert.alert('Đăng Kí Thất Bại tại catch'));
