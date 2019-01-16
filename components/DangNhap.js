@@ -27,13 +27,7 @@ export default class DangNhap extends React.Component{
     }
     clickLogin(){
       //api da thnh cong, khong quan tam den nua
-<<<<<<< HEAD
-
-      fetch("http://192.168.0.126/serverlogin.php",{
-
-=======
       fetch("http://192.168.0.107/serverlogin.php",{
->>>>>>> hieu_le
 
       method: 'POST',
       headers: {
