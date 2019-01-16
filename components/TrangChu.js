@@ -5,6 +5,7 @@ import { Text, View, Image, StatusBar,
 import styles from '../css/Styless';
 import global from '../api/global';
 import checkLogin from '../api/checkLogin';
+import checkNapHoSo from '../api/checkNapHoSo';
 import getToken from '../api/getToken';
 import getASync from '../api/getASync';
 import saveToken from '../api/saveToken';
@@ -20,18 +21,30 @@ export default class TrangChu extends React.Component {
       txtTimKiem: "",
       txtDiaDiem: 29,
       txtStatus:"",  
-      user: null,   
+      user: null,  
+      isCV:null, 
+      
     }
     global.onSignIn = this.onSignin.bind(this);
+    global.isCV = this.setCV.bind(this);
   }
   componentDidMount(){
+    //lấy ra token
+    this.setState({isCV:null})
     getToken()
-    // .then(token => {checkLogin(token)
-    //     //console.log(token)
-    // })
         .then(res => {
           console.log("ccc", res),
-          global.onSignIn(res)})
+          //sử dụng token để check login và trả về kết quả
+          checkLogin(res)
+          .then(ResponseJson => {
+            global.onSignIn(ResponseJson.user);
+            checkNapHoSo(ResponseJson.user.MaUser)
+              .then(Response => {
+                console.log("response:", Response.MaNXinViec)
+                global.isCV(Response.MaNXinViec);
+              })
+          })  
+        })
         .catch(err => console.log('LOI CHECK LOGIN', err));
   }
 
@@ -41,7 +54,9 @@ export default class TrangChu extends React.Component {
   onSignin(user){
     this.setState({user});
   }
-
+  setCV(isCV){
+    this.setState({isCV});
+  }
   clickTimKiem(TimKiem, DiaDiem){  
     AsyncStorage.setItem("@TimKiem", this.state.txtTimKiem);
     AsyncStorage.setItem("@DiaDiem", this.state.txtDiaDiem);
@@ -51,7 +66,9 @@ export default class TrangChu extends React.Component {
 
   DangXuat = ()=>{
     this.setState({user:null});
+    this.setState({isCV:null});
     saveToken('');
+    
   }
   DangNhap=()=>{
 
@@ -59,14 +76,26 @@ export default class TrangChu extends React.Component {
   }
 
   DangKi=()=>{
-   
     this.props.navigation.navigate('Register')  
   }
 
   TaoCV=()=>{
+    console.log("user", this.state.user);
+    console.log("cv:", this.state.isCV);
+    if(this.state.user){
+      if(this.state.isCV){
+        Alert.alert("Bạn đã có CV")
+      }
+      else{
+        this.props.navigation.navigate('TaoCV')
+      }
+    }
+    else{
+      Alert.alert("Bạn cần đăng nhập")
+    }
    
-    this.props.navigation.navigate('TaoCV')  
-  }
+    }
+    
 
   static navigationOptions = {
     title: 'Tìm việc',
@@ -108,9 +137,7 @@ export default class TrangChu extends React.Component {
       //this.state.user.name => tiến hành lấy thuộc tính name trong array của user trả về
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}></Text>
     )    
-    const showID = (
-      <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.MaUser: ''}</Text>
-    )
+    
     const username = this.state.user ? showUsername : hideUsername;
     const isLoguotJSX = this.state.user  ? loginStatus : logoutStatus;
     

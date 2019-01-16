@@ -37,8 +37,6 @@ export default class TaoCV extends React.Component {
         currentDate: new Date(),
         cbxtrinhdo: "1",
         cbxtentinh: "29",
-        MaUser:null,
-        result:null,
         //
         errMessage:""
     }
@@ -59,25 +57,29 @@ export default class TaoCV extends React.Component {
     }
   };
 
-
   componentDidMount(){
-    checknapHoSo()
-      .then(res =>  this.setState({result:res}))
     getToken()
-    .then(token =>  {checkLogin(token)})
+    .then(token =>  { 
+      checkLogin(token)
         .then(res => {
           this.setState({MaUser:res.user.MaUser})
         })
+      })
         .catch(err => {
           console.log(err)
         });
   }
 
   clickNapHoSo(){
+<<<<<<< HEAD
 
     fetch("http://192.168.0.126/serverNapCV.php",{
 
 
+=======
+    console.log("Mauser",this.state.MaUser)
+    fetch("http://192.168.0.107/serverNapCV.php",{
+>>>>>>> hieu_le
 
         method: 'POST',
         headers: {
@@ -106,14 +108,6 @@ export default class TaoCV extends React.Component {
   }
  
   render() {
-    if(!this.state.MaUser){
-      Alert.alert('Bạn cần đăng nhập')
-      this.props.navigation.navigate('Home')
-    }
-    if(!this.state.result){
-      Alert.alert('Bạn đã có hồ sơ')
-      this.props.navigation.navigate('Home')
-    }
     return (
    
       <ScrollView>

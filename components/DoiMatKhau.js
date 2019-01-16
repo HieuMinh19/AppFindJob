@@ -25,7 +25,11 @@ export default class DangKi extends React.Component{
 
     clickDoiMatKhau(){
         console.log("vao duoc click DoiMatKhau");
+<<<<<<< HEAD
       fetch("http://192.168.0.126/serverDoiMatKhau.php",{
+=======
+      fetch("http://192.168.0.107/serverDoiMatKhau.php",{
+>>>>>>> hieu_le
           method: 'POST',
           headers: {
             'Accept': 'application/json',
