@@ -1,5 +1,5 @@
 const getCV = (id) => (
-    fetch('http://192.168.0.107/serverGetCV.php',
+    fetch('http://192.168.3.29/serverGetCV.php',
     {   
         method: 'POST',
         headers: {
