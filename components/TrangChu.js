@@ -135,7 +135,7 @@ export default class TrangChu extends React.Component {
 
         <Picker
           selectedValue={this.state.txtDiaDiem}
-          style={{ height: 50, width: 100 }}
+          style={{ height: 50, width: 315 }}
           onValueChange={(itemValue, itemIndex) => this.setState({txtDiaDiem: itemValue})}>
           <Picker.Item label="Thành phố HCM" value="29" />
           <Picker.Item label="An Giang" value="2"/>

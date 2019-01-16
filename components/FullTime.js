@@ -98,7 +98,7 @@ export default class showCongViec extends React.Component {
             <ScrollView>
                 <View style={styless.LuaChon}>
                          <TouchableOpacity style={styless.btnLuaChon} onPress={this.PartTime}>
-                            <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>PartTime</Text>
+                            <Text style={{fontSize: 15, color:'#2E2EFE', fontWeight:'bold'}}>PartTime</Text>
                          </TouchableOpacity>
                          <View style={styless._DisbtnLuaChon} >
                             <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>FullTime</Text>
@@ -122,10 +122,10 @@ export default class showCongViec extends React.Component {
 
 var styless = StyleSheet.create({
   title:{
-    
     paddingTop: 10,
-    fontSize: 30,
-    
+    fontSize: 27,
+    marginLeft: 10,
+
   },
   LuaChon:{  
     height:40,
@@ -138,28 +138,25 @@ var styless = StyleSheet.create({
   btnLuaChon:{
     marginTop: 20,
     marginLeft: 10,
-    backgroundColor: '#2E2EFE',
     borderRadius: 40,
     alignItems: 'center',
     padding: 8,
     marginRight:3,
-    width:100,
     justifyContent: 'space-between',
-    // flexDirection: 'now',
     width: '40%',
+    borderWidth: 1.5,
+    borderColor: '#2E2EFE'
 },
 _DisbtnLuaChon:{
-    marginTop: 20,
-    marginLeft: 10,
-    backgroundColor: '#ddd',
-    borderRadius: 40,
-    alignItems: 'center',
-    padding: 8,
-    marginRight:3,
-    width:100,
-    justifyContent: 'space-between',
-    // flexDirection: 'now',
-    width: '40%',
+  marginTop: 20,
+  marginLeft: 10,
+  borderRadius: 40,
+  alignItems: 'center',
+  padding: 8,
+  marginRight:3,
+  justifyContent: 'space-between',
+  width: '40%',
+  backgroundColor: '#2E2EFE'
   },
   
     container: {
