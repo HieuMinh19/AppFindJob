@@ -101,10 +101,10 @@ export default class showCongViec extends React.Component {
             <ScrollView>
                 <View style={styless.LuaChon}>
                          <TouchableOpacity style={styless.btnLuaChon} onPress={this.PartTime}>
-                            <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>PartTime</Text>
+                            <Text style={{fontSize: 15, color:'#2E2EFE', fontWeight:'bold'}}>PartTime</Text>
                          </TouchableOpacity>
                          <TouchableOpacity style={styless.btnLuaChon} onPress={this.FullTime}>
-                            <Text style={{fontSize: 15, color:'#fff', fontWeight:'bold'}}>Full Time</Text>
+                            <Text style={{fontSize: 15, color:'#2E2EFE', fontWeight:'bold'}}>Full Time</Text>
                          </TouchableOpacity>
                 </View>
 
@@ -141,15 +141,14 @@ var styless = StyleSheet.create({
   btnLuaChon:{
     marginTop: 20,
     marginLeft: 10,
-    backgroundColor: '#2E2EFE',
     borderRadius: 40,
     alignItems: 'center',
     padding: 8,
     marginRight:3,
-    width:100,
     justifyContent: 'space-between',
-    // flexDirection: 'now',
     width: '40%',
+    borderWidth: 1.5,
+    borderColor: '#2E2EFE'
 },
 
   
