@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\2018-2019 HKI\\App\\DoAnDiDong\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fi\\values-fi.xml",
+            "outputFile": "D:\\DoAnDiDong\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fi\\values-fi.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HieuUit\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\2e99ec24810e81a697bcbfb45f03c2a6\\res\\values-fi\\values-fi.xml",
+                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9a867b5cc389c883a24a6c57eb49b679\\res\\values-fi\\values-fi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\HieuUit\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3f5c6cf97670da0c9b52f4774aa415da\\res\\values-fi\\values-fi.xml",
+                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\af0f3d9857461a07ba52c0c31cfd36a5\\res\\values-fi\\values-fi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

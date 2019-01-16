@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\2018-2019 HKI\\App\\DoAnDiDong\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "D:\\DoAnDiDong\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HieuUit\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\2e99ec24810e81a697bcbfb45f03c2a6\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9a867b5cc389c883a24a6c57eb49b679\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\2018-2019 HKI\\App\\DoAnDiDong\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ne\\values-ne.xml",
+            "outputFile": "D:\\DoAnDiDong\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ne\\values-ne.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HieuUit\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\2e99ec24810e81a697bcbfb45f03c2a6\\res\\values-ne\\values-ne.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,210,314,422,513,620,747,841,931,1019,1129,1245,1348,1463,1565,1680,1851,1963",
-                        "endColumns": "104,103,107,90,106,126,93,89,87,109,115,102,114,101,114,170,111,85",
-                        "endOffsets": "205,309,417,508,615,742,836,926,1014,1124,1240,1343,1458,1560,1675,1846,1958,2044"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\HieuUit\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3f5c6cf97670da0c9b52f4774aa415da\\res\\values-ne\\values-ne.xml",
+                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\af0f3d9857461a07ba52c0c31cfd36a5\\res\\values-ne\\values-ne.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -28,6 +18,16 @@
                         "startOffsets": "2049",
                         "endColumns": "100",
                         "endOffsets": "2145"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\PhucDuc\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\9a867b5cc389c883a24a6c57eb49b679\\res\\values-ne\\values-ne.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,314,422,513,620,747,841,931,1019,1129,1245,1348,1463,1565,1680,1851,1963",
+                        "endColumns": "104,103,107,90,106,126,93,89,87,109,115,102,114,101,114,170,111,85",
+                        "endOffsets": "205,309,417,508,615,742,836,926,1014,1124,1240,1343,1458,1560,1675,1846,1958,2044"
                     }
                 }
             ]
