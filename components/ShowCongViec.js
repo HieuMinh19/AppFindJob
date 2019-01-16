@@ -5,7 +5,7 @@ import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
 
-var URL =  "http://192.168.0.107/servershowcongviec.php"
+var URL =  "http://192.168.1.101/servershowcongviec.php"
 import searchcongviecandmatinh from '../api/searchcongviecandmatinh'
 export default class showCongViec extends React.Component {
  

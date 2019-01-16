@@ -19,7 +19,7 @@ export default class DangKi extends React.Component{
     }
     clickRegister(){
 
-      fetch("http://192.168.0.107/serverRegister.php",{
+      fetch("http://192.168.1.101/serverRegister.php",{
 
 
           method: 'POST',

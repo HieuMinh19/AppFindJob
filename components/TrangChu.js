@@ -128,7 +128,7 @@ export default class TrangChu extends React.Component {
     const { user } = this.state;
     const showUsername = (
        
-      <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.username: ''}</Text>
+      <Text style={{fontSize: 15, color:'#585858', fontWeight:'400', fontWeight: 'bold'}}>{user ? user.username: ''}</Text>
       
       
     )    
@@ -176,15 +176,17 @@ export default class TrangChu extends React.Component {
           <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Tìm việc</Text>
         </TouchableOpacity>
 
-        {username}
+        <Text style={{fontSize: 15, color:'#585858', fontWeight:'400', paddingLeft: 20, fontWeight: 'bold', paddingTop: 20}}>Chào bạn {username} đến với FindJobs </Text>
         {isLoguotJSX}
+
+        <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.TaoCV}>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Tạo hồ sơ xin việc</Text>
+        </TouchableHighlight>
        
         <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangKi}>
           <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Chưa có tài khoản? Đăng kí</Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.TaoCV}>
-          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Tạo hồ sơ xin việc</Text>
-        </TouchableHighlight>
+
         <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
       </View>
     );

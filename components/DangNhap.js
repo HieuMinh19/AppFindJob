@@ -27,7 +27,7 @@ export default class DangNhap extends React.Component{
     }
     clickLogin(){
       //api da thnh cong, khong quan tam den nua
-      fetch("http://192.168.0.107/serverlogin.php",{
+      fetch("http://192.168.1.101/serverlogin.php",{
 
       method: 'POST',
       headers: {
@@ -131,14 +131,14 @@ var styless = StyleSheet.create({
   txtbtn:{
     fontSize: 13, 
     color:'#2E2EFE',
-    fontWeight:'400',
-    paddingLeft: 20
+    paddingLeft: 20,
   },
   btn12:{
     height: 35,
     borderWidth: 1,
     borderRadius: 18,
-    borderColor: '#585858'
+    borderColor: '#2E2EFE',
+    paddingTop: 8
   }
 })
 
