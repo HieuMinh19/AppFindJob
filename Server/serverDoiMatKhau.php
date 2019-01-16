@@ -11,24 +11,21 @@ $db = mysqli_connect('localhost', 'root', '', 'datadidong');
   $username = $obj["txtTaiKhoan"];
   $password_1 = $obj["txtMatKhauCu"];
   $password_2 = $obj["txtRetypeMatKhauMoi"];
-
-
-  
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
   
-  if (empty($username)) { 
+  if(empty($username)) { 
       $errMess = "Nhập Tài Khoản";
       $errors ++; 
     }
     
 
-  if (empty($password_1)) { 
+  if(empty($password_1)) { 
         $errMess = "Nhập Mật Khẩu Mới"; 
         $errors++;
     }
     
-    if (empty($password_2)) { 
+    if(empty($password_2)) { 
         $errMess = "Nhập Lại Mật Khẩu Mới"; 
         $errors++;
     } 

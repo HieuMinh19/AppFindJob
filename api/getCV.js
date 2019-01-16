@@ -1,14 +1,13 @@
-const checkNapHoSo = (MaUser) => (
-    fetch('http://192.168.0.107/check_CV.php',
+const getCV = (id) => (
+    fetch('http://192.168.0.107/serverGetCV.php',
     {   
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json'
         },
-        body: JSON.stringify({ MaUser })
+        body: JSON.stringify({ id })
     })
     .then(res => res.json())
 );
-
-module.exports = checkNapHoSo;
+module.exports = getCV;

@@ -9,7 +9,7 @@ import getMaCViec from '../api/getMaCViec';
 import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
-var URL =  "http://192.168.0.103/servershowchitietcongviec.php"
+var URL =  "http://192.168.0.107/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
@@ -46,7 +46,7 @@ export default class TrangChu extends React.Component {
       const macv = this.props.navigation.state.params.MaCViec;
       console.log("ABCXYZ",macv);
       console.log('MAUSER DNJSAHD', this.state.mauser)
-        fetch('http://192.168.0.103/serverNopHoSo.php',
+        fetch('http://192.168.0.107/serverNopHoSo.php',
         {
             method: 'POST',
             headers: {

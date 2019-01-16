@@ -5,12 +5,12 @@ import TrangChu from "./components/TrangChu";
 import DangNhap from "./components/DangNhap";
 import DangKi from "./components/DangKi";
 import TaoCV from "./components/TaoCV";
-//import TaoCV2 from "./components/TaoCV2";
 import showCongViec from "./components/ShowCongViec";
 import PartTime from "./components/PartTime";
 import FullTime from "./components/FullTime";
 import ChiTietCViec from "./components/ChiTietCViec";
 import DoiMatKhau from "./components/DoiMatKhau";
+import UpdateCV from "./components/UpdateCV";
 const App = createStackNavigator({
   Home: { screen: TrangChu},
   Login: {screen: DangNhap},
@@ -19,7 +19,7 @@ const App = createStackNavigator({
   DoiMatKhau:{screen:DoiMatKhau},
   ChiTietCViec:{screen:ChiTietCViec},
   showCongViec:{screen:showCongViec},
-  
+  UpdateCV:{screen:UpdateCV},
   PartTime:{screen:PartTime},
   FullTime:{screen:FullTime},
 }, {
@@ -28,6 +28,4 @@ const App = createStackNavigator({
 _toggleExpanded = () => {
     this.setState({ collapsed: !this.state.collapsed });
 }
-
-
 export default App;

@@ -60,8 +60,6 @@ $db = mysqli_connect('localhost', 'root', '', 'datadidong');
       }else{
         $errMess = "Thất Bại";
       }
-      
-    
   }
   
 ?>

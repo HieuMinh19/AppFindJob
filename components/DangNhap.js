@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Text, View, StatusBar, Image,
          TouchableOpacity, KeyboardAvoidingView,StyleSheet,
@@ -6,6 +5,7 @@ import { Text, View, StatusBar, Image,
 import styles from '../css/Styless';
 import global from '../api/global';
 import getToken from '../api/getToken';
+import checkNapHoSo from '../api/checkNapHoSo';
 import saveToken from '../api/saveToken';
 import saveAsync from '../api/saveAsync';
 export default class DangNhap extends React.Component{
@@ -14,9 +14,7 @@ export default class DangNhap extends React.Component{
       this.state = {
         TaiKhoan: "",
         txtMatKhau: "",
-            
       }
-
     }
     //componentDidMount là 1 hàm có sẵn được support 
     //Ngay sau khi hàm render được gọi đến lần đầu tiên chạy xong thì hàm này sẽ được chạy
@@ -28,15 +26,13 @@ export default class DangNhap extends React.Component{
       .then(a => console.log("TOKEN:::" + a))
     }
     clickLogin(){
-      
       //api da thnh cong, khong quan tam den nua
-      fetch("http://192.168.0.103/serverlogin.php",{
+      fetch("http://192.168.0.107/serverlogin.php",{
 
       method: 'POST',
       headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-     
       },
       
       body: JSON.stringify({
@@ -55,12 +51,16 @@ export default class DangNhap extends React.Component{
         //lệnh console.log để tiến hành debug  
         //truyền vào tham số respose.user vì response trả về 1 user
         global.onSignIn(response.user);
+        checkNapHoSo(response.user.MaUser)
+        .then(Response => {
+          console.log("response:", Response.MaNXinViec)
+          global.isCV(Response.MaNXinViec);
+        })
         this.props.navigation.navigate("Home");
         //tiến hành save token bằng AsynStorage
         //saveToken("@token", response.token);
         AsyncStorage.setItem("@token", response.token);
       })
-      
       //catch truong hop login khong thanh cong, 
       //ham login se khhong the tra ve chuoi json => gây ra lỗi
       //consle.log() để tiến hành debug nếu có lỗi xảy ra
@@ -68,9 +68,7 @@ export default class DangNhap extends React.Component{
         Alert.alert("Login không thành công");
         console.log(err)
       })
-       
     }
-
     dangki(){
       this.props.navigation.navigate("Register");
     }
@@ -87,8 +85,6 @@ export default class DangNhap extends React.Component{
           fontWeight: 'bold',
         }
     };
-
-
     render() {         
         return (
           <View style={styles.container}>
@@ -119,20 +115,15 @@ export default class DangNhap extends React.Component{
             </TouchableOpacity>
             <TouchableOpacity style={styles.btn1}   onPress={this.dangki.bind(this)}>
               <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}} >Tạo tài khoản</Text>
-            </TouchableOpacity>
-              
+            </TouchableOpacity>   
               <View>
-              
                   <TouchableOpacity style={styless.btn12} onPress={this.DoiMatKhau.bind(this)} >
                       <Text style={styless.txtbtn} >Đổi mật khẩu</Text>
                   </TouchableOpacity>
               </View>
-
-
           </View>
         );
       }
-
 }
 
 var styless = StyleSheet.create({
