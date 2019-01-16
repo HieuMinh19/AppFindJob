@@ -4,15 +4,8 @@ import { Text, View,StyleSheet,StatusBar,ListView,ScrollView,TouchableOpacity,Al
 import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
-<<<<<<< HEAD
 
-var URL =  "http://192.168.0.126/servershowcongviec.php"
-
-var URL =  "http://192.168.0.126/servershowcongviec.php"
-
-=======
 var URL =  "http://192.168.0.107/servershowcongviec.php"
->>>>>>> hieu_le
 import searchcongviecandmatinh from '../api/searchcongviecandmatinh'
 export default class showCongViec extends React.Component {
  
@@ -38,11 +31,7 @@ export default class showCongViec extends React.Component {
       }
       FullTime=(a)=>{
         this.props.navigation.navigate('FullTime')  
-      }
-<<<<<<< HEAD
-
-=======
->>>>>>> hieu_le
+      } 
     componentDidMount(){
       const tencongviec = this.props.navigation.state.params.searchTenCV;
       const matinh = this.props.navigation.state.params.Matinh;

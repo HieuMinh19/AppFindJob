@@ -45,10 +45,6 @@ $db = mysqli_connect('localhost', 'root', '', 'datadidong');
     if ($user) { // if user exists
         $password_2 = md5($password_2);
         $query1 = "UPDATE user SET password='$password_2' WHERE username='$username'";
-<<<<<<< HEAD
-      
-=======
->>>>>>> a6b7b7fe1df12c29576fd1383338c1eb97c191ed
           if(mysqli_query($db, $query1)){
             $errMess = "Thành Công";
           }else{

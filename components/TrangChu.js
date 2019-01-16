@@ -85,6 +85,7 @@ export default class TrangChu extends React.Component {
     if(this.state.user){
       if(this.state.isCV){
         Alert.alert("Bạn đã có CV")
+        this.props.navigation.navigate('UpdateCV')
       }
       else{
         this.props.navigation.navigate('TaoCV')

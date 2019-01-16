@@ -1,13 +1,6 @@
 const checkLogin = (token) => (
-<<<<<<< HEAD
 
-    // console.log("sdsdssssssssssssssssss"),
-    fetch('http://192.168.0.126/check_login.php',
-
-=======
     fetch('http://192.168.0.107/check_login.php',
->>>>>>> hieu_le
-
     {   
         
         method: 'POST',
