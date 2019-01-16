@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\2018-2019 HKI\\App\\DoAnDiDong\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-te\\values-te.xml",
+            "outputFile": "D:\\Developers\\JavaScript\\React Native\\AppFindJob\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-te\\values-te.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HieuUit\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\3f5c6cf97670da0c9b52f4774aa415da\\res\\values-te\\values-te.xml",
+                    "source": "C:\\Users\\trngo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1f1ade01d757526d792e1e19ea018584\\res\\values-te\\values-te.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,219,328,439,529,634,759,841,923,1007,1120,1228,1327,1438,1540,1657,1823,1924",
+                        "endColumns": "113,108,110,89,104,124,81,81,83,112,107,98,110,101,116,165,100,81",
+                        "endOffsets": "214,323,434,524,629,754,836,918,1002,1115,1223,1322,1433,1535,1652,1818,1919,2001"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\trngo\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\c1f6caf3f1ce22fdeb6e63a1773b2641\\res\\values-te\\values-te.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -18,16 +28,6 @@
                         "startOffsets": "2006",
                         "endColumns": "100",
                         "endOffsets": "2102"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\HieuUit\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\2e99ec24810e81a697bcbfb45f03c2a6\\res\\values-te\\values-te.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,219,328,439,529,634,759,841,923,1007,1120,1228,1327,1438,1540,1657,1823,1924",
-                        "endColumns": "113,108,110,89,104,124,81,81,83,112,107,98,110,101,116,165,100,81",
-                        "endOffsets": "214,323,434,524,629,754,836,918,1002,1115,1223,1322,1433,1535,1652,1818,1919,2001"
                     }
                 }
             ]

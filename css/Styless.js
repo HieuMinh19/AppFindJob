@@ -23,7 +23,10 @@ export default StyleSheet.create({
     },
     
     btn2:{
-      paddingVertical:10,
+      paddingVertical: 10,
+      borderWidth: 1.5,
+      borderColor: '#2E2EFE',
+      borderRadius: 25,
     },
     txtInput1:{
       height: 40,

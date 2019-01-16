@@ -113,13 +113,13 @@ export default class TrangChu extends React.Component {
     const loginStatus = (
       <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} 
         onPress={this.DangXuat.bind(this)}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng xuất</Text>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Đăng xuất</Text>
       </TouchableHighlight>
     )       
      
     const logoutStatus = (
       <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangNhap}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng nhập</Text>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Đăng nhập</Text>
         </TouchableHighlight>
     )      
     
@@ -180,10 +180,10 @@ export default class TrangChu extends React.Component {
         {isLoguotJSX}
        
         <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangKi}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng kí</Text>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Chưa có tài khoản? Đăng kí</Text>
         </TouchableHighlight>
         <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.TaoCV}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Tạo hồ sơ</Text>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Tạo hồ sơ xin việc</Text>
         </TouchableHighlight>
         <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
       </View>
