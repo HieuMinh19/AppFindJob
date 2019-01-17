@@ -1,14 +1,11 @@
 const getMaCViec = (macviec) => {
     let url;
-    
-  url =  `http://192.168.3.29/servershowchitietcongviec.php?MaCViec=${macviec}`;
-  console.log("chuoi responseData tra ve ");
+
+  url =  `http://172.30.192.17/servershowchitietcongviec.php?MaCViec=${macviec}`;
+
     
     return fetch(url)
-    .then(res => res.json()
-    
-    );
-    
+    .then(res => res.json());
 };
 
 export default getMaCViec;

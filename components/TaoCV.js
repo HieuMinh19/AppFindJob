@@ -16,7 +16,7 @@ export default class TaoCV extends React.Component {
         titleTaoCV:"PHẦN THÔNG TIN CÁ NHÂN",
         titleHoDem: "Họ tên",
         titleDiaDiem:"Địa chỉ",
-        titleMail:"email",
+        titleMail:"Email",
         titleText1: "Tên Công ty",
         titleText3: "Trình độ",  
         titleNgaySinh: "Ngày sinh",
@@ -72,7 +72,7 @@ export default class TaoCV extends React.Component {
 
   clickNapHoSo(){
     console.log("Mauser",this.state.MaUser)
-    fetch("http://192.168.3.29/serverNapCV.php",{
+    fetch("http://172.30.192.17/serverNapCV.php",{
 
         method: 'POST',
         headers: {
@@ -104,7 +104,7 @@ export default class TaoCV extends React.Component {
     return (
    
       <ScrollView>
-        <Text>{this.state.MaUser}</Text>
+        {/* <Text>{this.state.MaUser}</Text> */}
         <View style={styles.container}>
           <StatusBar hidden/>
 
@@ -173,7 +173,7 @@ export default class TaoCV extends React.Component {
 {/* combobox ten tinh */}
         <Picker
           selectedValue={this.state.cbxtentinh}
-          style={{ height: 50, width: 100 }}
+          style={{ height: 50, width: 315 }}
           onValueChange={(itemValue) => this.setState({cbxtentinh: itemValue})}>
           <Picker.Item label="tp Hồ Chí Minh" value="29" />
           <Picker.Item label="Hà Nội" value="1" />
@@ -196,7 +196,7 @@ export default class TaoCV extends React.Component {
 {/* Trinh Do ng xin viec */}
         <Picker
           selectedValue={this.state.cbxtrinhdo}
-          style={{ height: 50, width: 100 }}
+          style={{ height: 50, width: 315 }}
           onValueChange={(itemValue) => this.setState({cbxtrinhdo: itemValue})}>
           <Picker.Item label="Phổ Thông" value="1" />
           <Picker.Item label="Trung Cấp" value="2" />

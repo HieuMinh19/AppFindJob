@@ -78,14 +78,17 @@ export default class TrangChu extends React.Component {
   DangKi=()=>{
     this.props.navigation.navigate('Register')  
   }
+  DoiMatKhau=()=>{
+    this.props.navigation.navigate('DoiMatKhau')  
+  }
 
   TaoCV=()=>{
     console.log("user", this.state.user);
     console.log("cv:", this.state.isCV);
     if(this.state.user){
       if(this.state.isCV){
-        //Alert.alert("Bạn đã có CV")
-        this.props.navigation.navigate('UpdateCV', {MaNXViec: this.state.isCV})
+        Alert.alert("Bạn đã có CV")
+        this.props.navigation.navigate('UpdateCV',{MaNXViec: this.state.isCV})
       }
       else{
         this.props.navigation.navigate('TaoCV')
@@ -113,13 +116,13 @@ export default class TrangChu extends React.Component {
     const loginStatus = (
       <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} 
         onPress={this.DangXuat.bind(this)}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng xuất</Text>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Đăng xuất</Text>
       </TouchableHighlight>
     )       
      
     const logoutStatus = (
       <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangNhap}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng nhập</Text>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Đăng nhập</Text>
         </TouchableHighlight>
     )      
     
@@ -128,9 +131,7 @@ export default class TrangChu extends React.Component {
     const { user } = this.state;
     const showUsername = (
        
-      <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>{user ? user.username: ''}</Text>
-      
-      
+      <Text style={{fontSize: 15, color:'red', fontWeight:'400', fontWeight: 'bold'}}>{user ? user.username: ''}</Text>
     )    
     const hideUsername = (
       //kiểm tra xem user có tồn tại hay không,
@@ -138,10 +139,19 @@ export default class TrangChu extends React.Component {
       //this.state.user.name => tiến hành lấy thuộc tính name trong array của user trả về
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}></Text>
     )    
-    
+    const DangKi = (
+      <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangKi}>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Chưa có tài khoản? Đăng kí</Text>
+        </TouchableHighlight>
+    )
+    const changPass =(
+      <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DoiMatKhau}>
+        <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Đổi mật khẩu ?</Text>
+      </TouchableHighlight>
+    )
     const username = this.state.user ? showUsername : hideUsername;
     const isLoguotJSX = this.state.user  ? loginStatus : logoutStatus;
-    
+    const isRegister = this.state.user  ? changPass : DangKi;
     return (
 
       <View style={styles.container}>
@@ -176,15 +186,15 @@ export default class TrangChu extends React.Component {
           <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Tìm việc</Text>
         </TouchableOpacity>
 
-        {username}
+        <Text style={{fontSize: 15, color:'#585858', fontWeight:'400', paddingLeft: 20, fontWeight: 'bold', paddingTop: 20}}>Chào bạn {username} đến với FindJobs </Text>
         {isLoguotJSX}
-       
-        <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangKi}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Đăng kí</Text>
-        </TouchableHighlight>
+
         <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.TaoCV}>
-          <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}>Tạo hồ sơ</Text>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Tạo hồ sơ xin việc</Text>
         </TouchableHighlight>
+       
+        {isRegister}
+
         <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
       </View>
     );

@@ -19,11 +19,13 @@ export default StyleSheet.create({
       borderRadius: 25,
       alignItems: 'center',
       padding: 8
-      
     },
     
     btn2:{
-      paddingVertical:10,
+      paddingVertical: 10,
+      borderWidth: 1.5,
+      borderColor: '#2E2EFE',
+      borderRadius: 25,
     },
     txtInput1:{
       height: 40,
