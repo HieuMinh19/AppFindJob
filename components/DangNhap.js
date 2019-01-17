@@ -27,7 +27,7 @@ export default class DangNhap extends React.Component{
     }
     clickLogin(){
       //api da thnh cong, khong quan tam den nua
-      fetch("http://192.168.3.29/serverlogin.php",{
+      fetch("http://172.30.192.17/serverlogin.php",{
 
       method: 'POST',
       headers: {
@@ -72,9 +72,6 @@ export default class DangNhap extends React.Component{
     dangki(){
       this.props.navigation.navigate("Register");
     }
-    DoiMatKhau(){
-      this.props.navigation.navigate("DoiMatKhau");
-    }
     static navigationOptions = {
         title: 'Đăng nhập',
         headerStyle:{
@@ -91,24 +88,24 @@ export default class DangNhap extends React.Component{
             <StatusBar hidden/>
 
             <Image style={styles.logo} source={require('../assets/logo.png')}/>
-            <Text style={{fontSize: 40, fontWeight: '500', color:'red'} }>Đăng nhập</Text>
+            <Text style={{fontSize: 40, fontWeight: '500', color:'#000'} }>Đăng nhập</Text>
 
-            <Text style={{paddingLeft: 20,color:'red'}}>Địa chỉ email</Text>
+            <Text style={{paddingLeft: 20,color:'#000'}}>Tài khoản</Text>
 
-            <TextInput placeholder="email" placeholderTextColor="#585858" style={styles.txtInput2}  
+            <TextInput placeholder="Tài Khoản" placeholderTextColor="#585858" style={styles.txtInput2}  
                 onChangeText={(TaiKhoan) => this.setState({TaiKhoan})}
                 value={this.state.TaiKhoan}/>
  
 
 
-            <Text style={{paddingLeft: 20,color:'red'}}>Mật khẩu</Text>
+            <Text style={{paddingLeft: 20,color:'#000'}}>Mật khẩu</Text>
 
-            <TextInput placeholder="password" placeholderTextColor="#585858" style={styles.txtInput2}  
+            <TextInput placeholder="Mật Khẩu" placeholderTextColor="#585858" style={styles.txtInput2}  
                 secureTextEntry
                 onChangeText={(txtMatKhau) => this.setState({txtMatKhau})}
                 value={this.state.txtMatKhau}/>
 
-          <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
+          <Text style={{paddingLeft: 20, color:'#000'}}>{this.state.errMessage}</Text>
 
           <TouchableOpacity style={styles.btn1} onPress={this.clickLogin.bind(this)}>
               <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Đăng nhập</Text>
@@ -116,11 +113,6 @@ export default class DangNhap extends React.Component{
             <TouchableOpacity style={styles.btn1}   onPress={this.dangki.bind(this)}>
               <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}} >Tạo tài khoản</Text>
             </TouchableOpacity>   
-              <View>
-                  <TouchableOpacity style={styless.btn12} onPress={this.DoiMatKhau.bind(this)} >
-                      <Text style={styless.txtbtn} >Đổi mật khẩu</Text>
-                  </TouchableOpacity>
-              </View>
           </View>
         );
       }
@@ -129,13 +121,17 @@ export default class DangNhap extends React.Component{
 
 var styless = StyleSheet.create({
   txtbtn:{
-    fontSize: 16, color:'#0B610B', fontWeight:'500'
+    fontSize: 13, 
+    color:'#2E2EFE',
+    paddingLeft: 20,
   },
   btn12:{
-    color: '#0B610B',
+    height: 35,
+    borderWidth: 1,
+    borderRadius: 18,
+    borderColor: '#2E2EFE',
+    paddingTop: 8
   }
-
-
 })
 
 

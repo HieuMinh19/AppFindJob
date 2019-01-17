@@ -10,7 +10,7 @@ import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
 
-var URL =  "http://192.168.3.29/servershowchitietcongviec.php"
+var URL =  "http://172.30.192.17/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
@@ -41,7 +41,6 @@ export default class TrangChu extends React.Component {
           this.setState({
             dataSource: this.state.dataSource.cloneWithRows(responseData)
           });  
-          console.log("res trong chi tiet cong viec",responseData);
         })
         .catch(err => console.log(err));
     }
@@ -61,7 +60,7 @@ export default class TrangChu extends React.Component {
       const macv = this.props.navigation.state.params.MaCViec;
       console.log("ABCXYZ",macv);
       console.log('MAUSER DNJSAHD', this.state.mauser)
-        fetch('http://192.168.3.29/serverNopHoSo.php',
+        fetch('http://172.30.192.17/serverNopHoSo.php',
         {
             method: 'POST',
             headers: {
@@ -110,7 +109,7 @@ export default class TrangChu extends React.Component {
                 {this.state.mauser}
               </Text>   */}
 
-              <Text>{this.props.navigation.state.params.MaCViec}</Text>
+              {/* <Text>{this.props.navigation.state.params.MaCViec}</Text> */}
                 <View style={styles.container}>                              
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}
