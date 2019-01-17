@@ -2,7 +2,7 @@
 const getMaUpDate = (macviec) => {
     let url;
     
-  url =  `http://172.30.192.17/serverUpdateNXViec.php?MaNXViec=${macviec}`;
+  url =  `http://192.168.1.2/serverUpdateNXViec.php?MaNXViec=${macviec}`;
   console.log("chuoi responseData tra ve ");
     
     return fetch(url)

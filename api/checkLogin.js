@@ -1,6 +1,6 @@
 const checkLogin = (token) => (
 
-    fetch('http://172.30.192.17/check_login.php',
+    fetch('http://192.168.1.2/check_login.php',
     {   
         
         method: 'POST',
