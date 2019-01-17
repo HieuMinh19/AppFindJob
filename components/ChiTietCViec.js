@@ -10,7 +10,7 @@ import getToken from '../api/getToken';
 import checkLogin from '../api/checkLogin';
 
 
-var URL =  "http://172.30.192.17/servershowchitietcongviec.php"
+var URL =  "http://192.168.1.2/servershowchitietcongviec.php"
 
 export default class TrangChu extends React.Component {
  
@@ -60,7 +60,7 @@ export default class TrangChu extends React.Component {
       const macv = this.props.navigation.state.params.MaCViec;
       console.log("ABCXYZ",macv);
       console.log('MAUSER DNJSAHD', this.state.mauser)
-        fetch('http://172.30.192.17/serverNopHoSo.php',
+        fetch('http://192.168.1.2/serverNopHoSo.php',
         {
             method: 'POST',
             headers: {

@@ -5,7 +5,7 @@ import global from '../api/global';
 var showcongty = Array();
 var arr = new Array(1, 2, 4, 5, 9, 6);
 
-var URL =  "http://172.30.192.17/serverFindFullTime.php"
+var URL =  "http://192.168.1.2/serverFindFullTime.php"
 
 export default class showCongViec extends React.Component {
  

@@ -1,6 +1,6 @@
 const checkNapHoSo = (MaUser) => (
 
-    fetch('http://172.30.192.17/check_CV.php',
+    fetch('http://192.168.1.2/check_CV.php',
 
     {   
         method: 'POST',
