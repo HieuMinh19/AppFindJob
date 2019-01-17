@@ -78,6 +78,9 @@ export default class TrangChu extends React.Component {
   DangKi=()=>{
     this.props.navigation.navigate('Register')  
   }
+  DoiMatKhau=()=>{
+    this.props.navigation.navigate('DoiMatKhau')  
+  }
 
   TaoCV=()=>{
     console.log("user", this.state.user);
@@ -85,7 +88,7 @@ export default class TrangChu extends React.Component {
     if(this.state.user){
       if(this.state.isCV){
         Alert.alert("Bạn đã có CV")
-        this.props.navigation.navigate('UpdateCV')
+        this.props.navigation.navigate('UpdateCV',{MaNXViec: this.state.isCV})
       }
       else{
         this.props.navigation.navigate('TaoCV')
@@ -129,8 +132,6 @@ export default class TrangChu extends React.Component {
     const showUsername = (
        
       <Text style={{fontSize: 15, color:'#585858', fontWeight:'400', fontWeight: 'bold'}}>{user ? user.username: ''}</Text>
-      
-      
     )    
     const hideUsername = (
       //kiểm tra xem user có tồn tại hay không,
@@ -138,10 +139,19 @@ export default class TrangChu extends React.Component {
       //this.state.user.name => tiến hành lấy thuộc tính name trong array của user trả về
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}></Text>
     )    
-    
+    const DangKi = (
+      <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangKi}>
+          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Chưa có tài khoản? Đăng ký</Text>
+        </TouchableHighlight>
+    )
+    const changPass =(
+      <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DoiMatKhau}>
+        <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Đổi mật khẩu ?</Text>
+      </TouchableHighlight>
+    )
     const username = this.state.user ? showUsername : hideUsername;
     const isLoguotJSX = this.state.user  ? loginStatus : logoutStatus;
-    
+    const isRegister = this.state.user  ? changPass : DangKi;
     return (
 
       <View style={styles.container}>
@@ -183,9 +193,7 @@ export default class TrangChu extends React.Component {
           <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Tạo hồ sơ xin việc</Text>
         </TouchableHighlight>
        
-        <TouchableHighlight style={styles.btn2} underlayColor={'#5882FA'} onPress={this.DangKi}>
-          <Text style={{fontSize: 13, color:'#2E2EFE', fontWeight:'400', paddingLeft: 20}}>Chưa có tài khoản? Đăng kí</Text>
-        </TouchableHighlight>
+        {isRegister}
 
         <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
       </View>

@@ -13,10 +13,10 @@ export default class TaoCV extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-        titleTaoCV:"PHẦN THÔNG TIN CÁ NHÂN",
-        titleHoDem: "Họ tên",
+        titleTaoCV:"THÔNG TIN CÁ NHÂN",
+        titleHoTen: "Họ tên",
         titleDiaDiem:"Địa chỉ",
-        titleMail:"email",
+        titleMail:"Email",
         titleText1: "Tên Công ty",
         titleText3: "Trình độ",  
         titleNgaySinh: "Ngày sinh",
@@ -27,7 +27,7 @@ export default class TaoCV extends React.Component {
         bodyText2: "vị trí vai trò trong công ty",
         bodyText3: "địa chỉ công ty cũ",
   ////
-        txtHoDem: "",
+        txtHoTen: "",
         txtDiaChi: "",
         txteMail: "",
         txtSoDT:"",
@@ -47,7 +47,7 @@ export default class TaoCV extends React.Component {
   // }
 
   static navigationOptions = {
-    title: 'TẠO HỒ SƠ',
+    title: 'Tạo CV',
     headerStyle:{
       backgroundColor: '#000'
     },
@@ -81,7 +81,7 @@ export default class TaoCV extends React.Component {
     },
     body: JSON.stringify({
       
-        "TenNXinViec": this.state.txtHoDem,
+        "TenNXinViec": this.state.txtHoTen,
         "EmailNXinViec": this.state.txteMail,
         "DiaChiNXViec": this.state.txtDiaChi,
         "SoDienThoai":this.state.txtSoDT,
@@ -104,35 +104,20 @@ export default class TaoCV extends React.Component {
     return (
    
       <ScrollView>
-        <Text>{this.state.MaUser}</Text>
+        {/* <Text>{this.state.MaUser}</Text> */}
         <View style={styles.container}>
           <StatusBar hidden/>
-
-          <Text style={style.title_TaoCVa}>
-              <Text style={style.title_TaoCV}>{this.state.titleTaoCV}{'\t'}{'\t'}{'\t'}</Text>
-          </Text>
-          <Text style={{paddingLeft: 20, color:'red', fontSize: 20}}>{this.state.errMessage}</Text>
-          <Text style={style.ititle}>
-              <Text style={style.title}>{this.state.titleHoDem}{'\t'}{'\t'}{'\t'}</Text>
-          </Text>
-
-          <TextInput style={styles.txtInput1 } 
-                    onChangeText={(txtHoDem) => this.setState({txtHoDem})} 
-                    value={this.state.txtHoDem}/>
-
-          <Text style={style.ititle}>
-            <Text style={style.title}>{this.state.titleMail}{'\t'}{'\t'}{'\t'}</Text>
-          </Text>
-
-          <TextInput style={styles.txtInput1}  
-                    onChangeText={(txteMail) => this.setState({txteMail})}
-                    value={this.state.txteMail}/>
-
+          <Image style={styles.logo} source={require('../assets/logo.png')}/>
+          <Text style={{fontSize: 25, fontWeight: 'bold', color: '#000'}}>{this.state.titleTaoCV}{'\t'}{'\t'}{'\t'}</Text>
           
-          <Text style={style.ititle}>
-            <Text style={style.title}>{this.state.titleNgaySinh}{'\t'}{'\t'}{'\t'}</Text>
-          </Text>
+          <Text style={{color:'red', fontSize: 20}}>{this.state.errMessage}</Text>
 
+          <Text style={style.title}>{this.state.titleHoTen}{'\t'}{'\t'}{'\t'}</Text>
+          <TextInput style={styles.txtInput1 } 
+                    onChangeText={(txtHoTen) => this.setState({txtHoTen})} 
+                    value={this.state.txtHoTen}/>
+
+          <Text style={style.title}>{this.state.titleNgaySinh}{'\t'}{'\t'}{'\t'}</Text>
           <DatePicker
             style={{width: 200}}
             date={this.state.date}
@@ -155,48 +140,39 @@ export default class TaoCV extends React.Component {
                 marginLeft: 36
               }
             }}
-            onDateChange={(date) => {this.setState({date: date})}}
-            
-           />
+            onDateChange={(date) => {this.setState({date: date})}}/>
 
-
-          <Text style={style.ititle}>
-            <Text style={style.title}>{this.state.titleDiaDiem}{'\t'}{'\t'}{'\t'}</Text>
-          </Text>
+          <Text style={style.title}>{this.state.titleDiaDiem}{'\t'}{'\t'}{'\t'}</Text>
           <TextInput style={styles.txtInput1} 
                    onChangeText={(txtDiaChi) => this.setState({txtDiaChi})} 
                    value={this.state.txtDiaChi}/>
 
-          <Text style={style.ititle}>
-            <Text style={style.title}>{this.state.titleTenTinh}{'\t'}{'\t'}{'\t'}</Text>
-          </Text>
-{/* combobox ten tinh */}
-        <Picker
+          <Text style={style.title}>{this.state.titleTenTinh}{'\t'}{'\t'}{'\t'}</Text>
+          <Picker
           selectedValue={this.state.cbxtentinh}
-          style={{ height: 50, width: 100 }}
+          style={{ height: 50, width: 315 }}
           onValueChange={(itemValue) => this.setState({cbxtentinh: itemValue})}>
           <Picker.Item label="tp Hồ Chí Minh" value="29" />
           <Picker.Item label="Hà Nội" value="1" />
           <Picker.Item label="Đà Nẵng" value="16" />
           <Picker.Item label="Khánh Hòa" value="32" />
           <Picker.Item label="Cần Thơ" value="15" />
-         
-  
-        </Picker> 
-         <Text style={style.ititle}>
-            <Text style={style.title}>{this.state.titleSoDT}{'\t'}{'\t'}{'\t'}</Text>
-        </Text>
-        <TextInput style={styles.txtInput1} 
+          </Picker> 
+
+          <Text style={style.title}>{this.state.titleSoDT}{'\t'}{'\t'}{'\t'}</Text>
+          <TextInput style={styles.txtInput1} 
                    onChangeText={(txtSoDT) => this.setState({txtSoDT})} 
                    value={this.state.txtSoDT}/>
-        <Text style={style.ititle}>
+
+        <Text style={style.title}>{this.state.titleMail}{'\t'}{'\t'}{'\t'}</Text>
+        <TextInput style={styles.txtInput1}  
+                    onChangeText={(txteMail) => this.setState({txteMail})}
+                    value={this.state.txteMail}/>
+
           <Text style={style.title}>{this.state.titleText3}{'\t'}{'\t'}{'\t'}</Text>
-          <Text style={{fontSize: 13}}>{this.state.bodyText3}</Text>
-        </Text>
-{/* Trinh Do ng xin viec */}
-        <Picker
+          <Picker
           selectedValue={this.state.cbxtrinhdo}
-          style={{ height: 50, width: 100 }}
+          style={{ height: 50, width: 315 }}
           onValueChange={(itemValue) => this.setState({cbxtrinhdo: itemValue})}>
           <Picker.Item label="Phổ Thông" value="1" />
           <Picker.Item label="Trung Cấp" value="2" />
@@ -205,14 +181,10 @@ export default class TaoCV extends React.Component {
           <Picker.Item label="Kĩ Sữ" value="5" />
           <Picker.Item label="Thạc Sĩ" value="6" />
           <Picker.Item label="Tiến Sĩ" value="7" />
-        </Picker> 
-
-        <Text style={style.ititle}>
-          <Text style={{fontSize: 16, fontWeight: '500'}}>{this.state.titleNgayVaoLam}</Text>
-        </Text>
+          </Picker> 
        
-          <TouchableOpacity style={styles.btn1} onPress={this.clickNapHoSo.bind(this)}>
-            <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Tạo Hồ Sơ</Text>
+          <TouchableOpacity style={style.btn1} onPress={this.clickNapHoSo.bind(this)}>
+            <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Tạo Hồ Sơ Xin Việc</Text>
           </TouchableOpacity> 
         </View>
       </ScrollView>
@@ -221,24 +193,16 @@ export default class TaoCV extends React.Component {
   }
 }
 var style = StyleSheet.create({
-  title_TaoCVa:{
-   
-    alignItems:"center",
-     marginTop: 25
-  },
-  title_TaoCV:{
-    fontSize: 25, 
-    fontWeight: '500',
-     alignItems:"center"
-  },
-
-  ititle:{
-    paddingLeft: 20,
-    marginTop: 15
-  },
   title:{
-    fontSize: 20,
-     fontWeight: '500',
-     marginTop: 50
+    fontSize: 16,
+    fontWeight: '500',
+    marginTop: 8
   },
+  btn1:{
+    backgroundColor: '#2E2EFE',
+    borderRadius: 25,
+    alignItems: 'center',
+    padding: 8,
+    marginTop: 25
+  }
 })

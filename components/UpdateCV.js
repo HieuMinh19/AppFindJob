@@ -1,34 +1,44 @@
+
 import React from 'react';
-import { Text, View, Image, StatusBar, StyleSheet,Select,
-         TouchableOpacity, TouchableHighlight,ScrollView,ListView,
-         TextInput, Picker,CheckBox,Alert} from 'react-native';
-         import DatePicker from 'react-native-datepicker';
-import styles from '../css/Styless';
-import checkLogin from '../api/checkLogin';
+import {Text, View, Image, StatusBar, StyleSheet,Select,
+  TouchableOpacity, TouchableHighlight,ScrollView,
+  TextInput, DatePicker,CheckBox,Alert, ListView,Picker
+} from 'react-native';
+
+var showcongty = Array();
+var arr = new Array(1, 2, 4, 5, 9, 6);
+
+import getMaUpDate from '../api/getMaUpDate';
 import getToken from '../api/getToken';
-import checknapHoSo from '../api/checkNapHoSo';
-import getASync from '../api/getASync';
-import saveToken from '../api/saveToken';
-import getCV from '../api/getCV';
-export default class TaoCV extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-        titleTaoCV:"PHẦN THÔNG TIN CÁ NHÂN",
-        titleHoDem: "Họ tên",
+import checkLogin from '../api/checkLogin';
+import styles from '../css/Styless';
+
+
+export default class TrangChu extends React.Component {
+ 
+    constructor(props){
+        super(props);
+        this.state = {
+          
+          dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2}),
+          mauser:null,
+         
+        titleTaoCV:"THÔNG TIN CÁ NHÂN",
+        titleTaoCV2:"(sửa đổi)",
+        titleHoTen: "Họ và tên",
         titleDiaDiem:"Địa chỉ",
-        titleMail:"email",
+        titleMail:"Email",
         titleText1: "Tên Công ty",
-        titleText3: "Trình độ",  
+        titleTrinhDo: "Trình độ",  
         titleNgaySinh: "Ngày sinh",
-        titleSoDT:"Số Điện thoại",
-        titleTenTinh:"Tên Tỉnh: ",
-////
+        titleSoDT:"Số điện thoại",
+        titleTenTinh:"Tỉnh: ",
+
         bodyText1: "công ty gần nhất làm việc",
         bodyText2: "vị trí vai trò trong công ty",
         bodyText3: "địa chỉ công ty cũ",
-  ////
-        txtHoDem: "",
+
+        txtHoTen: "",
         txtDiaChi: "",
         txteMail: "",
         txtSoDT:"",
@@ -38,75 +48,44 @@ export default class TaoCV extends React.Component {
         currentDate: new Date(),
         cbxtrinhdo: "1",
         cbxtentinh: "29",
-        MaUser:null,
-        result:null,
-        isCV: null,
-        dataSource: new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2}),
-        //
+
         errMessage:""
-    }
-    this.taohang = this.taohang.bind(this);
-  }
+
+        }
+      }
+
+    componentDidMount(){
   
-  // onPress=()=>{
-  //   this.props.navigation.navigate('Login')  
-  // }
 
-  static navigationOptions = {
-    title: 'TẠO HỒ SƠ',
-    headerStyle:{
-      backgroundColor: '#000'
-    },
-    headerTintColor: '#fff',
-    headerTintStyle:{
-      fontWeight: 'bold',
-    }
-  };
-
-
-  componentDidMount(){
-    // checknapHoSo()
-    //   .then(res =>  {
-    //     this.setState({result:res})
-    //   })
-    getToken()
-    .then(token =>  {console.log('TOKEN: ',token)
-       checkLogin(token)
-        .then(res => {
-          this.setState({MaUser:res.user.MaUser})
-        })
-        .catch(err => {
-          console.log(err)
-        });
-      })
-        
-    getCV(MaUser)
+        const macviec = this.props.navigation.state.params.MaNXViec;
+        console.log("macviec lay trong chitiet_parttime",macviec),
+        getMaUpDate(macviec)
         .then(responseData => {
-          console.log("show de updaet",responseData);
           this.setState({
             dataSource: this.state.dataSource.cloneWithRows(responseData)
-          })
-          console.log('DATA SOURCE :',dataSource)
+          }); 
+          console.log("res trong chi tiet cong viec",responseData);
         })
         .catch(err => console.log(err));
 
-  }
-  taohang(property){
-    <View>     
-    <TouchableOpacity  >
-         <Text>Họ tên:{property.TenNXinViec}</Text>  
-         <Text>Trình độ:{property.TrinhDoCViec}</Text> 
-         <Text >Email:{property.EmailNXinViec}</Text>     
-         <Text>Tên tỉnh:{property.TenTinh}</Text>  
-         <Text >Số điện thoại:{property.SoDienThoai}</Text>   
-         <Text>Địa chỉ:{property.DiaChiNXViec}</Text>   
-         <Text>Ngày sinh:{property.NgaySinh}</Text>   
-     </TouchableOpacity>   
-   </View>
-  }
+        //set lai cac thuoc tinh
+        //
+        
+      }
 
-  clickNapHoSo(){
-    fetch("http://10.0.129.175/serverNapCV.php",{
+    static navigationOptions = {
+      title: 'Cập Nhật CV',
+      headerStyle:{
+        backgroundColor: '#000'
+      },
+      headerTintColor: '#fff',
+      headerTintStyle:{
+        fontWeight: 'bold',
+      }
+  };
+  clickUpdateHoso(){
+    const macviecaa = this.props.navigation.state.params.MaNXViec;
+    fetch("http://192.168.1.101/serverUpdate.php",{
 
         method: 'POST',
         headers: {
@@ -114,62 +93,144 @@ export default class TaoCV extends React.Component {
           'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      
-        "TenNXinViec": this.state.txtHoDem,
+        "a":macviecaa,
+        "TenNXinViec": this.state.txtHoTen,
         "EmailNXinViec": this.state.txteMail,
         "DiaChiNXViec": this.state.txtDiaChi,
         "SoDienThoai":this.state.txtSoDT,
         "MaTinh":this.state.cbxtentinh,
         "MaTrinhDo":this.state.cbxtrinhdo,
-        "NgaySinh": this.state.date,
-        "MaUser": this.state.MaUser,
       })
      })
     .then(  (response) => response.json())
     .then(  (responseJson) => {       
         this.setState({errMessage:responseJson.kq}) 
-        
+        console.log("maNXiviec ",this.state.errMessage);
+        console.log("res:  ",responseJson);
     } )
-    .catch((error)=>  
-    Alert.alert('Đăng Kí Thất Bại tại catch'));
+    .catch((error)=> {
+      Alert.alert('Đăng Kí Thất Bại tại catch');
+      console.log(error);
+    } );
+   
   }
- 
-  render() {
-    // if(!this.state.MaUser){
-    //   Alert.alert('Bạn cần đăng nhập')
-    //   this.props.navigation.navigate('Home')
-    // }
-    // if(!this.state.result){
-    //   Alert.alert('Bạn đã có hồ sơ')
-    //   this.props.navigation.navigate('Home')
-    // }
-    return (
-      <ListView dataSource={this.state.dataSource}
-        renderRow = {this.taohang}
-      />                      
+  // setState(){
 
-    );
-  }
+  // }
+
+    taohang(property){
+        return(
+          <View>  
+            <Text style={{fontSize: 20, fontWeight: 'bold', color: '#000', marginHorizontal: 80}}>HỒ SƠ XIN VIỆC</Text>
+            <Text style={style.title_CV}>Họ và tên: {property.TenNXinViec}</Text>  
+            <Text style={style.title_CV}>Ngày sinh: {property.NgaySinh}</Text> 
+            <Text style={style.title_CV}>Địa chỉ: {property.DiaChiNXViec}</Text>  
+            <Text style={style.title_CV}>Tỉnh: {property.TenTinh}</Text>  
+            <Text style={style.title_CV}>Số điện thoại: {property.SoDienThoai}</Text>    
+            <Text style={style.title_CV}>Email: {property.EmailNXinViec}</Text>        
+            <Text style={style.title_CV}>Trinh độ học vấn: {property.tenTrinhDo}</Text> 
+          </View>
+        );
+      }
+    render(){
+        return(
+
+            <ScrollView>
+                <View style={style.container}>                              
+                    <ListView dataSource={this.state.dataSource}
+                            renderRow = {this.taohang}
+                    />    
+                </View>     
+                <View style={style.container}>
+                   <StatusBar hidden/>
+                      <Text>
+                         <Text style={style.title_UpdateCV}>{this.state.titleTaoCV}{'\t'}{'\t'}</Text>
+                         <Text style={{fontSize: 15, color: '#000'}}>{this.state.titleTaoCV2}</Text>
+                      </Text>
+
+                      <Text style={style.title}>{this.state.titleHoTen}{'\t'}{'\t'}{'\t'}</Text>
+                      <TextInput style={styles.txtInput1 } 
+                         onChangeText={(txtHoTen) => this.setState({txtHoTen})} 
+                         value={this.state.txtHoTen}/>
+
+                      <Text style={style.title}>{this.state.titleDiaDiem}{'\t'}{'\t'}{'\t'}</Text>
+                      <TextInput style={styles.txtInput1} 
+                        onChangeText={(txtDiaChi) => this.setState({txtDiaChi})} 
+                        value={this.state.txtDiaChi}/>
+                      
+                      <Text style={style.title}>{this.state.titleTenTinh}{'\t'}{'\t'}{'\t'}</Text>
+                      <Picker
+                        selectedValue={this.state.cbxtentinh}
+                        style={{ height: 50, width: 315 }}
+                        onValueChange={(itemValue) => this.setState({cbxtentinh: itemValue})}>
+                        <Picker.Item label="tp Hồ Chí Minh" value="29" />
+                        <Picker.Item label="Hà Nội" value="1" />
+                        <Picker.Item label="Đà Nẵng" value="16" />
+                        <Picker.Item label="Khánh Hòa" value="32" />
+                        <Picker.Item label="Cần Thơ" value="15" />
+                      </Picker> 
+
+                      <Text style={style.title}>{this.state.titleSoDT}{'\t'}{'\t'}{'\t'}</Text>
+                      <TextInput style={styles.txtInput1} 
+                        onChangeText={(txtSoDT) => this.setState({txtSoDT})} 
+                        value={this.state.txtSoDT}/>
+                         
+                      <Text style={style.title}>{this.state.titleMail}{'\t'}{'\t'}{'\t'}</Text>
+                      <TextInput style={styles.txtInput1}  
+                        onChangeText={(txteMail) => this.setState({txteMail})}
+                        value={this.state.txteMail}/>
+
+                      <Text style={style.title}>{this.state.titleTrinhDo}{'\t'}{'\t'}{'\t'}</Text>
+                      <Picker
+                        selectedValue={this.state.cbxtrinhdo}
+                        style={{ height: 50, width: 315 }}
+                        onValueChange={(itemValue) => this.setState({cbxtrinhdo: itemValue})}>
+                          <Picker.Item label="Phổ Thông" value="1" />
+                          <Picker.Item label="Trung Cấp" value="2" />
+                          <Picker.Item label="Cao Đẳng" value="3" />
+                          <Picker.Item label="Cử Nhân" value="4" />
+                          <Picker.Item label="Kĩ Sữ" value="5" />
+                          <Picker.Item label="Thạc Sĩ" value="6" />
+                          <Picker.Item label="Tiến Sĩ" value="7" />
+                       </Picker> 
+
+                      <TouchableOpacity style={style.btn1} onPress={this.clickUpdateHoso.bind(this)} >
+                        <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}}>Cập Nhật Hồ Sơ Xin Việc</Text>
+                      </TouchableOpacity>
+
+                </View>
+                <Text style={{paddingLeft: 20, color:'red'}}>{this.state.errMessage}</Text>
+            </ScrollView>   
+
+        );
+    }
 }
 var style = StyleSheet.create({
-  title_TaoCVa:{
-   
-    alignItems:"center",
-     marginTop: 25
+  container: {
+    flex: 1,
+    justifyContent: 'space-around',
+    paddingHorizontal: 25,
+    paddingBottom: 50
   },
-  title_TaoCV:{
-    fontSize: 25, 
-    fontWeight: '500',
-     alignItems:"center"
-  },
-
-  ititle:{
-    paddingLeft: 20,
-    marginTop: 15
+  title_UpdateCV:{
+    fontSize: 20, 
+    fontWeight: 'bold',
+    color: '#000'
   },
   title:{
-    fontSize: 20,
-     fontWeight: '500',
-     marginTop: 50
+    fontSize: 16,
+    fontWeight: '500',
+    marginTop: 8
+  },
+  title_CV:{
+    fontSize: 15,
+    color: '#000',
+  },
+  btn1:{
+    backgroundColor: '#2E2EFE',
+    borderRadius: 25,
+    alignItems: 'center',
+    padding: 8,
+    marginTop: 25
   },
 })

@@ -38,10 +38,10 @@ export default class DangKi extends React.Component{
         this.setState({errMessage:responseJson.kq}) 
          //Alert.alert('them thanh cong')
           //setTimeout(() => Alert.alert('tạo tài khoản không thành công'), 2);
-          if(this.state.errMessage == "Thành Công"){
-            Alert.alert('Đăng Kí Thành Công')
+          if(this.state.errMessage == "Tạo tài khoản thành công"){
+            Alert.alert('Đăng Ký Thành Công')
           }   else{
-            Alert.alert('Đăng Kí Thất Bại')
+            Alert.alert('Đăng Ký Thất Bại')
           } 
           //this.state.errMessage = ""
           
@@ -54,7 +54,7 @@ export default class DangKi extends React.Component{
       Alert.alert('Đăng Kí Thất Bại tại catch'));
     }
     static navigationOptions = {
-        title: 'Tìm việc',
+        title: 'Đăng ký',
         headerStyle:{
           backgroundColor: '#000'
         },
@@ -70,20 +70,20 @@ export default class DangKi extends React.Component{
             <StatusBar hidden/>
 
             <Image style={styles.logo} source={require('../assets/logo.png')}/>
-            <Text style={{fontSize: 20, fontWeight: '500'}}>Tạo một tài khoản (miễn phí)</Text>
-            <Text style={{paddingLeft: 20}}>Username</Text>
-            <TextInput style={styles.txtInput2}  
+            <Text style={{fontSize: 23, fontWeight: '500', color: '#000'}}>Tạo một tài khoản (miễn phí)</Text>
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Tài khoản</Text>
+            <TextInput placeholder="username" placeholderTextColor="#585858" style={styles.txtInput2}  
                 onChangeText={(txtTaiKhoan) => this.setState({txtTaiKhoan})}
                 value={this.state.txtTaiKhoan}/>
 
-            <Text style={{paddingLeft: 20}}>Password</Text>
-            <TextInput style={styles.txtInput2}  
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Mật khẩu</Text>
+            <TextInput placeholder="password" placeholderTextColor="#585858" style={styles.txtInput2}  
                  secureTextEntry
                 onChangeText={(txtMatKhau) => this.setState({txtMatKhau})}
                 value={this.state.txtMatKhau}/>
 
-            <Text style={{paddingLeft: 20}}>Retype Password</Text>
-            <TextInput style={styles.txtInput2}  
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Nhập lại mật khẩu</Text>
+            <TextInput placeholder="retype password" placeholderTextColor="#585858" style={styles.txtInput2}  
                  secureTextEntry
                 onChangeText={(txtRetypeMatKhau) => this.setState({txtRetypeMatKhau})}
                 value={this.state.txtRetypeMatKhau}/>

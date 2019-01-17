@@ -85,9 +85,6 @@ export default class showCongViec extends React.Component {
       
     )    
     const hideUsername = (
-      //ki?m tra xem user có t?n t?i hay không,
-      // n?u có ti?n hành gán giá tr?
-      //this.state.user.name => ti?n hành l?y thu?c tính name trong array c?a user tr? v?
       <Text style={{fontSize: 13, color:'#000', fontWeight:'400'}}></Text>
     )    
     const username = this.state.user ? showUsername : hideUsername;
@@ -122,6 +119,7 @@ var styless = StyleSheet.create({
     paddingTop: 10,
     fontSize: 27,
     marginLeft: 10,
+    color: '#FF3300'
 
   },
   LuaChon:{  

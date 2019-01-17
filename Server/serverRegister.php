@@ -56,9 +56,9 @@ $db = mysqli_connect('localhost', 'root', '', 'datadidong');
       $query = "INSERT INTO user ( username,  password) 
       VALUES('$username', '$password') ";
       if(mysqli_query($db, $query)){
-        $errMess = "Thành Công";
+        $errMess = "Tạo tài khoản thành công";
       }else{
-        $errMess = "Thất Bại";
+        $errMess = "Tạo tài khoản thất bại";
       }
   }
   

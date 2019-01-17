@@ -72,9 +72,6 @@ export default class DangNhap extends React.Component{
     dangki(){
       this.props.navigation.navigate("Register");
     }
-    DoiMatKhau(){
-      this.props.navigation.navigate("DoiMatKhau");
-    }
     static navigationOptions = {
         title: 'Đăng nhập',
         headerStyle:{
@@ -93,15 +90,15 @@ export default class DangNhap extends React.Component{
             <Image style={styles.logo} source={require('../assets/logo.png')}/>
             <Text style={{fontSize: 40, fontWeight: '500', color:'#000'} }>Đăng nhập</Text>
 
-            <Text style={{paddingLeft: 20,color:'#000'}}>Tài khoản</Text>
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Tài khoản</Text>
 
-            <TextInput placeholder="email" placeholderTextColor="#585858" style={styles.txtInput2}  
+            <TextInput placeholder="username" placeholderTextColor="#585858" style={styles.txtInput2}  
                 onChangeText={(TaiKhoan) => this.setState({TaiKhoan})}
                 value={this.state.TaiKhoan}/>
  
 
 
-            <Text style={{paddingLeft: 20,color:'#000'}}>Mật khẩu</Text>
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Mật khẩu</Text>
 
             <TextInput placeholder="password" placeholderTextColor="#585858" style={styles.txtInput2}  
                 secureTextEntry
@@ -116,11 +113,6 @@ export default class DangNhap extends React.Component{
             <TouchableOpacity style={styles.btn1}   onPress={this.dangki.bind(this)}>
               <Text style={{fontSize: 16, color:'#fff', fontWeight:'500'}} >Tạo tài khoản</Text>
             </TouchableOpacity>   
-              <View>
-                  <TouchableOpacity style={styless.btn12} onPress={this.DoiMatKhau.bind(this)} >
-                      <Text style={styless.txtbtn} >Đổi mật khẩu ?</Text>
-                  </TouchableOpacity>
-              </View>
           </View>
         );
       }

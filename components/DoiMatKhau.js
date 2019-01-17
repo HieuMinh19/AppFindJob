@@ -79,20 +79,21 @@ export default class DangKi extends React.Component{
             <StatusBar hidden/>
 
             <Image style={styles.logo} source={require('../assets/logo.png')}/>
-            <Text style={{fontSize: 20, fontWeight: '500'}}>Tạo một tài khoản (miễn phí)</Text>
+            <Text style={{fontSize: 25, fontWeight: '500', color: '#000'}}>Đổi mật khẩu</Text>
             <Text style={{paddingLeft: 20}}>{this.state.uname}</Text>
-            <Text style={{paddingLeft: 20}}>Username</Text>
+
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Tài khoản</Text>
             <TextInput style={styles.txtInput2}  
                 onChangeText={(txtTaiKhoan) => this.setState({txtTaiKhoan})}
                 value={this.state.txtTaiKhoan}/>
 
-            <Text style={{paddingLeft: 20}}>Password</Text>
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Mật khẩu mới</Text>
             <TextInput style={styles.txtInput2}  
                  secureTextEntry
                 onChangeText={(txtMatKhau) => this.setState({txtMatKhau})}
                 value={this.state.txtMatKhau}/>
 
-            <Text style={{paddingLeft: 20}}>Retype Password</Text>
+            <Text style={{paddingLeft: 25,color:'#585858', fontWeight:'bold'}}>Nhập lại mật khẩu mới</Text>
             <TextInput style={styles.txtInput2}  
                  secureTextEntry
                 onChangeText={(txtRetypeMatKhau) => this.setState({txtRetypeMatKhau})}

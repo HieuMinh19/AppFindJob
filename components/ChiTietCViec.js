@@ -109,7 +109,7 @@ export default class TrangChu extends React.Component {
                 {this.state.mauser}
               </Text>   */}
 
-              <Text>{this.props.navigation.state.params.MaCViec}</Text>
+              {/* <Text>{this.props.navigation.state.params.MaCViec}</Text> */}
                 <View style={styles.container}>                              
                     <ListView dataSource={this.state.dataSource}
                             renderRow = {this.taohang}
